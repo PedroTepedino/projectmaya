@@ -50,8 +50,11 @@ public class AudioManager : MonoBehaviour
         sfx = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
         master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
         master.setVolume(masterVolume);
+        master.setMute(masterMute);
         music.setVolume(musicVolume);
+        music.setMute(musicMute);
         sfx.setVolume(sfxVolume);
+        sfx.setMute(sfxMute);
     }
 
     public void MasterVolumeLevel (float newMasterVolumeValue)
