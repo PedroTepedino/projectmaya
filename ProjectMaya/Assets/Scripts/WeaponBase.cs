@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class WeaponBase : MonoBehaviour
 {
+    public int weaponPriority;
     public int projectileDamage;
     public int magazineSize;
     public int magazineRemaning;

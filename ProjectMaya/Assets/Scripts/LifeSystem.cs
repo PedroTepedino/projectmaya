@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class LifeSystem : MonoBehaviour
 {
-    private readonly int _maxLife;
-    private int _currentLife;
+    public int _maxLife { get; private set; }
+    public int _currentLife { get; private set; }
 
     private bool IsDead => _currentLife <= 0;
 

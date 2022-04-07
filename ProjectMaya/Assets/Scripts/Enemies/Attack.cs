@@ -23,11 +23,12 @@ public class Attack : MonoBehaviour
     [SerializeField]
     [AssetsOnly]
     [InlineEditor]
-    private BaseAttack[] avalibleAttacks;
+    private WeaponBase[] avalibleAttacks;
+    private WeaponBase selectedWeapon;
 
     // private EnemyAnimationController animationController;
     private EnemyStateMachine _controller;
-    private int attackChancesSum = 1;
+    //private int attackChancesSum = 1;
     private int selectedAttackIndex;
 
     [HideInInspector] public bool isInRange;
@@ -35,36 +36,52 @@ public class Attack : MonoBehaviour
     private void Awake()
     {
         _controller = GetComponent<EnemyStateMachine>();
+
+        if (avalibleAttacks.Length > 0)
+        {
+            selectedWeapon = avalibleAttacks[0];
+        }
         // animationController = GetComponent<EnemyAnimationController>();
     }
 
     private void Start()
     {
-        for (int i = 0; i < avalibleAttacks.Length; i++)
-        {
-            attackChancesSum += avalibleAttacks[i].attackChance;
-        }
+        // for (int i = 0; i < avalibleAttacks.Length; i++)
+        // {
+        //     attackChancesSum += avalibleAttacks[i].attackChance;
+        // }
     }
 
     public void SelectAttack()
     {
-        int assortedChance = Random.Range(0, (attackChancesSum));
-        int accumulatedChance = 0;
+        // int assortedChance = Random.Range(0, (attackChancesSum));
+        // int accumulatedChance = 0;
+
+        // for (int i = 0; i < avalibleAttacks.Length; i++)
+        // {
+        //     accumulatedChance += avalibleAttacks[i].attackChance;
+        //     if (assortedChance <= accumulatedChance)
+        //     {
+        //         // animationController.TriggerAnimationAttack(avalibleAttacks[i].attackAnimationName);
+        //         selectedAttackIndex = i;
+        //         break;
+        //     }
+        // }
 
         for (int i = 0; i < avalibleAttacks.Length; i++)
         {
-            accumulatedChance += avalibleAttacks[i].attackChance;
-            if (assortedChance <= accumulatedChance)
+            if ((selectedWeapon.weaponPriority < avalibleAttacks[i].weaponPriority) && (avalibleAttacks[i].magazineRemaning > 0))
             {
-                // animationController.TriggerAnimationAttack(avalibleAttacks[i].attackAnimationName);
-                selectedAttackIndex = i;
-                break;
+                selectedWeapon = avalibleAttacks[i];
             }
         }
+
+        selectedWeapon.Shoot();
+        
     }
 
-    public void ListenAttackFinished()
-    {
-        avalibleAttacks[selectedAttackIndex].AttackAction(this.transform, collisionLayerMask, _controller);
-    }
+    // public void ListenAttackFinished()
+    // {
+    //     avalibleAttacks[selectedAttackIndex].AttackAction(this.transform, collisionLayerMask, _controller);
+    // }
 }
