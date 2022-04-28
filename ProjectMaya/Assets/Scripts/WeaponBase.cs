@@ -10,6 +10,7 @@ public abstract class WeaponBase : MonoBehaviour
     public int magazineRemaning;
     public float reloadTime;
     public float shootingSpeed;
+    public GameObject projectileGameObject;
 
     public abstract void Shoot();
 
