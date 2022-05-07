@@ -38,11 +38,7 @@ public abstract class WeaponBase : MonoBehaviour
         projectile.gameObject.SetActive(false);
     }
 
-    public virtual void Shoot()
-    {
-        var projectile = pool.Get();
-        projectile.direction = this.transform.forward;
-    }
+    public abstract void Shoot();
 
     public virtual void Reload()
     {
