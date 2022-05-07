@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public abstract class Projectile : MonoBehaviour
 {
@@ -9,6 +10,12 @@ public abstract class Projectile : MonoBehaviour
     public float lifetime = 5f;
     public LayerMask layersToHit;
     public Vector2 direction { get;  set; }
+
+    public ParticleSystem destroyParticle;
+
+    IObjectPool<Projectile> pool;
+
+    public void SetPool(IObjectPool<Projectile> toSetPool) => pool = toSetPool;
     
     protected void OnEnable() {
         Invoke("Destroy", lifetime);
@@ -25,7 +32,11 @@ public abstract class Projectile : MonoBehaviour
 
     protected void Destroy()
     {
-        gameObject.SetActive(false);
+        if (destroyParticle != null)
+        {
+            destroyParticle.Play();
+        }
+        pool.Release(this);
     }
 
     protected private void OnDisable() {

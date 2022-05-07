@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public abstract class WeaponBase : MonoBehaviour
 {
@@ -10,9 +11,38 @@ public abstract class WeaponBase : MonoBehaviour
     public int magazineRemaning;
     public float reloadTime;
     public float shootingSpeed;
-    public GameObject projectileGameObject;
+    public Projectile projectilePrefab;
 
-    public abstract void Shoot();
+    public ObjectPool<Projectile> pool;
+
+    protected void Awake() 
+    {
+        pool = new ObjectPool<Projectile>(CreateProjectile, OnTakeProjectileFromPool, OnReturnProjectileToPool);
+    }
+
+    Projectile CreateProjectile()
+    {
+        var projectile = Instantiate(projectilePrefab);
+        projectile.SetPool(pool);
+        return projectile;
+    }
+
+    void OnTakeProjectileFromPool(Projectile projectile)
+    {
+        projectile.transform.position = this.gameObject.transform.position;
+        projectile.gameObject.SetActive(true);
+    }
+
+    void OnReturnProjectileToPool(Projectile projectile)
+    {
+        projectile.gameObject.SetActive(false);
+    }
+
+    public virtual void Shoot()
+    {
+        var projectile = pool.Get();
+        projectile.direction = this.transform.forward;
+    }
 
     public virtual void Reload()
     {
