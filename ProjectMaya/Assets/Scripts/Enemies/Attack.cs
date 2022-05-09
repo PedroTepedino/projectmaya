@@ -23,7 +23,7 @@ public class Attack : MonoBehaviour
     [SerializeField]
     [AssetsOnly]
     [InlineEditor]
-    private WeaponBase[] avalibleAttacks;
+    private WeaponBase[] availibleAttacks;
     private WeaponBase selectedWeapon;
 
     // private EnemyAnimationController animationController;
@@ -37,9 +37,9 @@ public class Attack : MonoBehaviour
     {
         _controller = GetComponent<EnemyStateMachine>();
 
-        if (avalibleAttacks.Length > 0)
+        if (availibleAttacks.Length > 0)
         {
-            selectedWeapon = avalibleAttacks[0];
+            selectedWeapon = availibleAttacks[0];
         }
         // animationController = GetComponent<EnemyAnimationController>();
     }
@@ -68,11 +68,11 @@ public class Attack : MonoBehaviour
         //     }
         // }
 
-        for (int i = 0; i < avalibleAttacks.Length; i++)
+        for (int i = 0; i < availibleAttacks.Length; i++)
         {
-            if ((selectedWeapon.weaponPriority < avalibleAttacks[i].weaponPriority) && (avalibleAttacks[i].magazineRemaning > 0))
+            if ((selectedWeapon.weaponPriority < availibleAttacks[i].weaponPriority) && (availibleAttacks[i].magazineRemaning > 0))
             {
-                selectedWeapon = avalibleAttacks[i];
+                selectedWeapon = availibleAttacks[i];
             }
         }
 

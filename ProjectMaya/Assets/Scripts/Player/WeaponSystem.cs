@@ -1,0 +1,77 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class WeaponSystem : MonoBehaviour
+{
+    public WeaponBase[] availableWeapons;
+    public WeaponBase selectedWeapon;
+    public int selectedWeaponID;
+
+    private void ListenToShootButton(InputAction.CallbackContext context)
+    {
+        selectedWeapon.Shoot();
+    }
+
+    private void ListenToReloadButton(InputAction.CallbackContext context)
+    {
+        selectedWeapon.Reload();
+    }
+
+    private void ListenToSelectWeapon1Button(InputAction.CallbackContext context)
+    {
+        if (context.canceled)
+        {
+            selectedWeapon = availableWeapons[0];
+            selectedWeaponID = 0;
+        }
+    }
+
+    private void ListenToSelectWeapon2Button(InputAction.CallbackContext context)
+    {
+        if (context.canceled)
+        {
+            selectedWeapon = availableWeapons[1];
+            selectedWeaponID = 0;
+        }
+    }
+
+    private void ListenToSelectWeapon3Button(InputAction.CallbackContext context)
+    {
+        if (context.canceled)
+        {
+            selectedWeapon = availableWeapons[2];
+            selectedWeaponID = 0;
+        }
+    }
+
+    private void ListenToSelectWeapon4Button(InputAction.CallbackContext context)
+    {
+        if (context.canceled)
+        {
+            selectedWeapon = availableWeapons[3];
+            selectedWeaponID = 0;
+        }
+    }
+
+    private void ListenToSelectNextWeaponButton(InputAction.CallbackContext context)
+    {
+        if (context.canceled)
+        {
+            selectedWeaponID++;
+            selectedWeaponID = (selectedWeaponID > 4 ? 0 : selectedWeaponID);
+            selectedWeapon = availableWeapons[selectedWeaponID];
+        }
+    }
+
+    private void ListenToSelectPreviousWeaponButton(InputAction.CallbackContext context)
+    {
+        if (context.canceled)
+        {
+            selectedWeaponID--;
+            selectedWeaponID = (selectedWeaponID < 0 ? 4 : selectedWeaponID);
+            selectedWeapon = availableWeapons[selectedWeaponID];
+        }
+    }
+}
