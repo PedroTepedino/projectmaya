@@ -2,7 +2,7 @@
     "name": "PlayerActions",
     "maps": [
         {
-            "name": "Default",
+            "name": "Gameplay",
             "id": "f0432303-93aa-4a21-843b-ce0b05d667fc",
             "actions": [
                 {
@@ -334,6 +334,34 @@
                     "processors": "",
                     "groups": "",
                     "action": "SelectPreviousWeapon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "8dd54c69-bf54-4b02-b240-1383c63b7baf",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "88f34a03-6712-498f-b2f0-af10eb6f3d08",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e6ee207f-b00f-4e34-b9e0-e864c6133a68",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
