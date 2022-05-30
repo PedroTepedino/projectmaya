@@ -88,7 +88,8 @@ public class GameManager : MonoBehaviour
 
     public void GoToMainMenu()
     {
-
+        Debug.Log("Main Menu");
     }
+
 
 }
