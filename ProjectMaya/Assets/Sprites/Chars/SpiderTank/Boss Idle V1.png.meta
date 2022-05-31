@@ -1,0 +1,1200 @@
+fileFormatVersion: 2
+guid: a1ddabe7df03f764ab9847a8d9046a26
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ST_Cannon_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1792
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f89d3f7ee990e694399ba54c485b7fcf
+      internalID: -130179034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1792
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ef0a8d85ee249d4282844ddd5f68367
+      internalID: -1383409769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1792
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76138f026b913147b8dbb1cb6fd14f9
+      internalID: -390859700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1792
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ecfe7ada040abb499448e09e007d961
+      internalID: -1232859415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1792
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1d85c68241d03644805ec7f7ecebf96
+      internalID: 783432482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1792
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d443d6b24ae54f499f2b393343c2667
+      internalID: -959054542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1568
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e17f4564724ff4081c8b485304b3f5
+      internalID: 396382863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1568
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edd36834a33377c4c85790f01b4336a0
+      internalID: 97712241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1568
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74d1fb4784d41c64ca0bdef8735454cf
+      internalID: 1418090216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Idle_9
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1568
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c3b4017eb092f44e96a004521e93ceb
+      internalID: 803645147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1568
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6723954bbcd1fbf43847c2c74511bacc
+      internalID: -1207462306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1568
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d63191334d1d72d48981f6deb0c58052
+      internalID: -2024989146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Rot_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1344
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9098493058560145b4797f49d776dd1
+      internalID: 101725116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Rot_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1344
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 189ea97adfcad5f4985478ba757434da
+      internalID: -424671822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Rot_2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1344
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e73bb42ab44b614388437d8bf78cfcc
+      internalID: -421550669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Rot_3
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1344
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 328abd29b464c93449e0a893ac40a8ce
+      internalID: -1939250014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Rot_4
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1344
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd81c6b659a0af34a8d8c18aaa32edda
+      internalID: -17782636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Rot_5
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1344
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f59ec52c62526c46bb663c61ff52a7c
+      internalID: -779250339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Rot_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1120
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 963fa8d1e2a2dec428fb027c3dabdc03
+      internalID: -637405494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Rot_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1120
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 149e4477b0cd2f542b01617ed5288cc4
+      internalID: 1661441489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Rot_8
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1120
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c4d3f719fe78e49bef37ae7395ff6c
+      internalID: 140217199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Rot_9
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1120
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea5839d1bf1b78d4194b5121f2b237a5
+      internalID: -1861284009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Rot_10
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1120
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d65f9dbfa89119543a89627960d04354
+      internalID: 856302514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Cannon_Rot_11
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1120
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27fb59b034e257f4688ef025f4cddae1
+      internalID: -2068081256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_MiniGuns_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91bd1f90fc3c852479ba78d38429bcac
+      internalID: 670043353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_MiniGuns_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 896
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7665af734287f70498a47e0347225c01
+      internalID: -1747508442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_MiniGuns_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 896
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c6f3d6607a73d45bbf21e86c6b280c
+      internalID: 1425657582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_MiniGuns_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 896
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f964d6eda938cf14bb15ae4c6cf31c86
+      internalID: -989044176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_MiniGuns_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 896
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f87f5054509a44980e3523c14de4d8
+      internalID: -1727037068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_MiniGuns_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 896
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5f1ad9a144f4074ca633e9d95b0387e
+      internalID: -920592046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_MiniGuns_Shooting_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 672
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30041d8e111ee54418e336e44b10c925
+      internalID: -284186489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_MiniGuns_Shooting_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 672
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1e8d4201d899b94689f93c42a73464c
+      internalID: -2085467950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_MiniGuns_Shooting_2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 672
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b47edf4a8638989419485af558cf9287
+      internalID: 665504359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_MiniGuns_Shooting_3
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 672
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62d5f79912c5ab946aae360fd4cb806c
+      internalID: -2037069396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_MiniGuns_Shooting_4
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 672
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10bd91b02bae93945a00947de5cf2860
+      internalID: 1493800256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_MiniGuns_Shooting_5
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 672
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a170a0e8dd9e504da91c16e9955397f
+      internalID: -495990209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Torso_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ad42260785d89244940d3cccfc8c724
+      internalID: -2129236047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Torso_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 448
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3f931632cc55b840be621cd101ef8ee
+      internalID: 2144745685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Torso_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 448
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc208ff43e5b34c4dbf8809b014b6fb0
+      internalID: 317868070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Torso_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 448
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e842cb4d531952a4385800e240a95d94
+      internalID: 1398981072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Torso_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 448
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76d1b4cbecd2d4742a380e25e0bedadc
+      internalID: -1118862535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Torso_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 448
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66543bfa7f492c84f8265a5d51e4489b
+      internalID: 913172119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Torso_Idle_CANNON_ROT
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a8028c77629d1489b5dda8c2fa4a90
+      internalID: 433768579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Leg_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2fd9f29f13e3c4f956b59e64e0ea1d
+      internalID: -625498106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Leg_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4c32d4ee5ad176438f8e8bc20bea623
+      internalID: 1151072525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Leg_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7389fdefaf2135498cc5c88f9a8cac8
+      internalID: 863872510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Leg_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1649210ff1de7fc4bbaf16550f487f6e
+      internalID: -567019315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Leg_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68f4377817ced704dab13442b7b37a21
+      internalID: 1621589373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ST_Leg_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0135db00f5c6220458b2303d76dfcc1d
+      internalID: -1919036695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ST_MiniGuns_Idle_4: -1727037068
+      ST_MiniGuns_Shooting_5: -495990209
+      ST_Cannon_Idle_4: -959054542
+      ST_Cannon_Rot_4: -17782636
+      ST_Cannon_Rot_11: -2068081256
+      ST_Cannon_Idle_0: -1383409769
+      ST_Cannon_Rot_0: 101725116
+      ST_MiniGuns_Shooting_3: -2037069396
+      ST_Leg_Idle_2: 863872510
+      ST_Leg_Idle_3: -567019315
+      ST_Cannon_Idle_6: 396382863
+      ST_Cannon_Idle_7: 97712241
+      ST_Cannon_Rot_1: -424671822
+      ST_Torso_Idle_3: 1398981072
+      ST_Cannon_Idle_10: -1207462306
+      ST_Leg_Idle_4: 1621589373
+      ST_MiniGuns_Idle_0: 670043353
+      ST_MiniGuns_Idle_3: -989044176
+      ST_Leg_Idle_5: -1919036695
+      ST_Cannon_Rot_5: -779250339
+      ST_Cannon_Idle_5: -959054542
+      ST_Torso_Idle_2: 317868070
+      ST_Cannon_Rot_2: -421550669
+      ST_Cannon_Rot_9: -1861284009
+      ST_Leg_Idle_0: -625498106
+      ST_MiniGuns_Shooting_1: -2085467950
+      ST_Torso_Idle_CANNON_ROT: 433768579
+      ST_MiniGuns_Shooting_2: 665504359
+      ST_MiniGuns_Shooting_0: -284186489
+      ST_MiniGuns_Idle_5: -920592046
+      ST_Cannon_Rot_8: 140217199
+      ST_Cannon_Idle_2: -1232859415
+      ST_Torso_Idle_0: -2129236047
+      ST_MiniGuns_Idle_1: -1747508442
+      ST_Cannon_Idle_3: 783432482
+      ST_Cannon_Rot_6: -637405494
+      ST_Torso_Idle_4: -1118862535
+      ST_Torso_Idle_5: 913172119
+      ST_Cannon_Idle_9: 803645147
+      ST_Cannon_Rot_10: 856302514
+      ST_Cannon_Idle_1: -390859700
+      ST_Torso_Idle_1: 2144745685
+      ST_MiniGuns_Shooting_4: 1493800256
+      ST_Cannon_Rot_3: -1939250014
+      ST_Cannon_Idle_8: 1418090216
+      ST_Cannon_Idle_11: -2024989146
+      ST_Cannon_Rot_7: 1661441489
+      ST_MiniGuns_Idle_2: 1425657582
+      ST_Leg_Idle_1: 1151072525
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
