@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 26
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1177,9 +1177,9 @@ TextureImporter:
       ST_Cannon_Idle_2: -1232859415
       ST_Torso_Idle_0: -2129236047
       ST_MiniGuns_Idle_1: -1747508442
-      ST_Cannon_Idle_3: 783432482
-      ST_Cannon_Rot_6: -637405494
       ST_Torso_Idle_4: -1118862535
+      ST_Cannon_Rot_6: -637405494
+      ST_Cannon_Idle_3: 783432482
       ST_Torso_Idle_5: 913172119
       ST_Cannon_Idle_9: 803645147
       ST_Cannon_Rot_10: 856302514
