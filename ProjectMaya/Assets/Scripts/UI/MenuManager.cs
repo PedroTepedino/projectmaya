@@ -28,6 +28,8 @@ public class MenuManager : MonoBehaviour
     public GameObject optionsMenu;
     public GameObject creditsMenu;
     public PlayerInput playerInput;
+    public SceneTransitionManager sceneManager;
+    public string playSceneName;
     private GameObject selectedMenu;
 
     private void Awake() 
@@ -49,6 +51,7 @@ public class MenuManager : MonoBehaviour
     public void PlayGame()
     {
         Debug.Log("Play");
+        sceneManager.SwitchToScene(playSceneName);
     }
 
     public void GoToOptions()

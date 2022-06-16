@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TesteRafael.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: e3f34f769253ee946a506af509e836a3
+  - enabled: 1
+    path: Assets/Scenes/Demo.unity
+    guid: 8aa71c336a3096849938af442a6f57d8
   m_configObjects: {}
