@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637837446043821910
+  lastModified: 637889362345348383
   FileSizes:
   - Name: Desktop
     Value: 782
@@ -41,7 +41,7 @@ MonoBehaviour:
   - {fileID: 2287336632285706948}
   StringsBanks:
   - {fileID: -3266379407884158868}
-  cacheTime: 637837446043821910
+  cacheTime: 637889362345348383
   cacheVersion: 10
 --- !u!114 &2287336632285706948
 MonoBehaviour:
@@ -58,7 +58,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637837446043811909
+  lastModified: 637889362345268622
   FileSizes:
   - Name: Desktop
     Value: 1340
