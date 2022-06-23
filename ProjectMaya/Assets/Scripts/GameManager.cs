@@ -25,10 +25,13 @@ public class GameManager : MonoBehaviour
 
     }
 
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject optionsMenu;
+    [SerializeField] private PlayerInput playerInput;
+    [SerializeField] private SceneTransitionManager sceneManager;
+    [SerializeField] private string menuSceneName;
+    
     private bool isGamePaused = false;
-    public GameObject pauseMenu;
-    public GameObject optionsMenu;
-    public PlayerInput playerInput;
 
     private void Awake() 
     {
@@ -41,6 +44,14 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+
+    private void OnEnable() {
+        playerInput.actions["Pause"].started += ListenToPauseButton;
+    }
+
+    private void OnDisable() {
+        playerInput.actions["Pause"].started -= ListenToPauseButton;
     }
 
     private void ListenToPauseButton(InputAction.CallbackContext context)
@@ -88,7 +99,7 @@ public class GameManager : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        Debug.Log("Main Menu");
+        sceneManager.SwitchToScene(menuSceneName);
     }
 
 
