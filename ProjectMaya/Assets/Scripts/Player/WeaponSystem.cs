@@ -5,9 +5,37 @@ using UnityEngine.InputSystem;
 
 public class WeaponSystem : MonoBehaviour
 {
-    public WeaponBase[] availableWeapons;
-    public WeaponBase selectedWeapon;
-    public int selectedWeaponID;
+    [SerializeField] private WeaponBase[] availableWeapons;
+
+    private WeaponBase selectedWeapon;
+    private PlayerInput playerInput;
+    private int selectedWeaponID;
+
+    private void Awake() {
+        playerInput = this.GetComponent<PlayerInput>();
+    }
+
+    private void OnEnable() {
+        playerInput.actions["Shoot"].started += ListenToShootButton;
+        playerInput.actions["Reload"].started += ListenToReloadButton;
+        playerInput.actions["SelectWeapon1"].started += ListenToSelectWeapon1Button;
+        playerInput.actions["SelectWeapon2"].started += ListenToSelectWeapon2Button;
+        playerInput.actions["SelectWeapon3"].started += ListenToSelectWeapon3Button;
+        playerInput.actions["SelectWeapon4"].started += ListenToSelectWeapon4Button;
+        playerInput.actions["SelectNextWeapon"].started += ListenToSelectNextWeaponButton;
+        playerInput.actions["SelectPreviousWeapon"].started += ListenToSelectPreviousWeaponButton;
+    }
+
+    private void OnDisable() {
+        playerInput.actions["Shoot"].started -= ListenToShootButton;
+        playerInput.actions["Reload"].started -= ListenToReloadButton;
+        playerInput.actions["SelectWeapon1"].started -= ListenToSelectWeapon1Button;
+        playerInput.actions["SelectWeapon2"].started -= ListenToSelectWeapon2Button;
+        playerInput.actions["SelectWeapon3"].started -= ListenToSelectWeapon3Button;
+        playerInput.actions["SelectWeapon4"].started -= ListenToSelectWeapon4Button;
+        playerInput.actions["SelectNextWeapon"].started -= ListenToSelectNextWeaponButton;
+        playerInput.actions["SelectPreviousWeapon"].started -= ListenToSelectPreviousWeaponButton;
+    }
 
     private void ListenToShootButton(InputAction.CallbackContext context)
     {
