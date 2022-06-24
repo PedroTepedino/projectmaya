@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private Rigidbody _rigidbody;
 
     private Mover _mover;
-    private AimSystem _aimSystem;
+    //private AimSystem _aimSystem;
 
     public Mover Mover => _mover; // TODO : remove when not necessary
 
@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         _rigidbody = this.GetComponent<Rigidbody>();
         _playerInput = this.GetComponent<PlayerInput>();
 
-        _aimSystem = new AimSystem(this.transform, _playerInput.actions["Move"], _playerParameters);
+        //_aimSystem = new AimSystem(this.transform, _playerInput.actions["Move"], _playerParameters);
         _mover = GetMover<ForceMover>();
     }
 
@@ -54,8 +54,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (_mover is not Dashing)
-            _aimSystem.Tick(Time.deltaTime);
+        //if (_mover is not Dashing)
+            //_aimSystem.Tick(Time.deltaTime);
     }
 
     private void FixedUpdate()
@@ -150,29 +150,29 @@ public class Player : MonoBehaviour
     }
 }
 
-public class AimSystem
-{
-    private readonly Transform _transform;
-    private readonly InputAction _mover;
-    private readonly PlayerParameters _playerParameters;
+// public class AimSystem
+// {
+//     private readonly Transform _transform;
+//     private readonly InputAction _mover;
+//     private readonly PlayerParameters _playerParameters;
 
-    public AimSystem(Transform transform, InputAction mover, PlayerParameters playerParameters)
-    {
-        _transform = transform;
-        _mover = mover;
-        _playerParameters = playerParameters;
-    }
+//     public AimSystem(Transform transform, InputAction mover, PlayerParameters playerParameters)
+//     {
+//         _transform = transform;
+//         _mover = mover;
+//         _playerParameters = playerParameters;
+//     }
 
-    public void Tick(float deltaTime)
-    {
-        var input = _mover.ReadValue<Vector2>();
+//     public void Tick(float deltaTime)
+//     {
+//         var input = _mover.ReadValue<Vector2>();
 
-        if (input.magnitude <= 0.1f)
-            return;
+//         if (input.magnitude <= 0.1f)
+//             return;
         
-        _transform.rotation = Quaternion.RotateTowards(
-            _transform.rotation, 
-            Quaternion.Euler(new Vector3(0f, Mathf.Atan2(input.x, input.y) * Mathf.Rad2Deg,0f)), 
-            _playerParameters.MaxAngle * deltaTime);
-    }
-}
+//         _transform.rotation = Quaternion.RotateTowards(
+//             _transform.rotation, 
+//             Quaternion.Euler(new Vector3(0f, Mathf.Atan2(input.x, input.y) * Mathf.Rad2Deg,0f)), 
+//             _playerParameters.MaxAngle * deltaTime);
+//     }
+// }

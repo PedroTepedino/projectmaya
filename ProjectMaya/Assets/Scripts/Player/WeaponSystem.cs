@@ -6,9 +6,9 @@ using UnityEngine.InputSystem;
 public class WeaponSystem : MonoBehaviour
 {
     [SerializeField] private WeaponBase[] availableWeapons;
+    [SerializeField] private PlayerInput playerInput;
 
     private WeaponBase selectedWeapon;
-    private PlayerInput playerInput;
     private int selectedWeaponID;
 
     private void Awake() {
