@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using Random = UnityEngine.Random;
+using System;
 
 public class Attack : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class Attack : MonoBehaviour
     [AssetsOnly]
     [InlineEditor]
     private WeaponBase[] availibleAttacks;
-    private WeaponBase selectedWeapon;
+    public WeaponBase selectedWeapon {get; private set;}
 
     // private EnemyAnimationController animationController;
     private EnemyStateMachine _controller;
@@ -32,6 +33,8 @@ public class Attack : MonoBehaviour
     private int selectedAttackIndex;
 
     [HideInInspector] public bool isInRange;
+
+    public Action OnAttack;
 
     private void Awake()
     {
@@ -77,7 +80,7 @@ public class Attack : MonoBehaviour
         }
 
         selectedWeapon.Shoot();
-        
+        OnAttack?.Invoke();
     }
 
     // public void ListenAttackFinished()
