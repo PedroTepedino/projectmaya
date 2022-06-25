@@ -7,23 +7,24 @@ public class PlayerAnimatorController : MonoBehaviour
 {
    [SerializeField] private Animator playerAnimator;
    [SerializeField] private PlayerInput playerInput;
-   [SerializeField] private Rigidbody2D playerRigidbody;
+   [SerializeField] private Rigidbody playerRigidbody;
    [SerializeField] private LifeSystem playerLifeSystem;
-   [SerializeField] private Player playerController;
+   [SerializeField] private SpriteRenderer playerSprite;
 
-   private bool dashing;
+   private bool dashing = false;
 
    private void Awake() 
    {
         playerInput = this.GetComponent<PlayerInput>();
-        playerRigidbody = this.GetComponent<Rigidbody2D>();
+        playerRigidbody = this.GetComponent<Rigidbody>();
         playerAnimator = this.GetComponentInChildren<Animator>();
         playerLifeSystem = this.GetComponent<LifeSystem>();
-        playerController = this.GetComponent<Player>();
+        playerSprite = this.GetComponent<SpriteRenderer>();
    }
 
    private void OnEnable() 
    {
+        playerInput.actions["Dash"].started += ListenToDashButton;
         playerInput.actions["Dash"].canceled += ListenToDashButton;
 
         playerLifeSystem.OnChangeLife += ListenDamage;
@@ -32,6 +33,7 @@ public class PlayerAnimatorController : MonoBehaviour
 
    private void OnDisable() 
    {
+        playerInput.actions["Dash"].started -= ListenToDashButton;
         playerInput.actions["Dash"].canceled -= ListenToDashButton;
 
         playerLifeSystem.OnChangeLife -= ListenDamage;
@@ -41,7 +43,6 @@ public class PlayerAnimatorController : MonoBehaviour
    private void Update() {
         GetInputDirection();
         GetVelocity();
-        GetDashing();
         FlipSprite();
         
    }
@@ -67,15 +68,18 @@ public class PlayerAnimatorController : MonoBehaviour
         playerAnimator.SetFloat("aimY", aim.y);
    }
 
-   private void GetDashing()
-   {
-        dashing = (playerController.Mover is Dashing);
-        playerAnimator.SetBool("dashing", dashing);
-   }
-
     private void ListenToDashButton(InputAction.CallbackContext context)
     {
-        playerAnimator.SetTrigger("dash");
+        if (!dashing)
+        {
+            playerAnimator.SetTrigger("dash");
+            dashing = true;
+        }
+    }
+
+    public void ListenDashEnd()
+    {
+        dashing = false;
     }
 
     private void ListenDamage()

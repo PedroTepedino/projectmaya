@@ -50,12 +50,12 @@ public class WallChecker : MonoBehaviour
     private bool WallCheck()
     {
         RaycastHit2D raycastHit2D;
-        // checkerCenter = transform.position +
-        //     new Vector3(controller.movingRight ? wallCheckerCenter.x : -wallCheckerCenter.x,
-        //         wallCheckerCenter.y, 0);
-        // raycastHit2D = Physics2D.Raycast(checkerCenter, controller.movingRight ? Vector2.right : Vector2.left,
-        //     checkerDistance, wallLayerMask);
-        // wallAhead = raycastHit2D.collider != null ? true : false;
+        checkerCenter = transform.position +
+            new Vector3(controller.movingRight ? wallCheckerCenter.x : -wallCheckerCenter.x,
+                wallCheckerCenter.y, 0);
+        raycastHit2D = Physics2D.Raycast(checkerCenter, controller.movingRight ? Vector2.right : Vector2.left,
+            checkerDistance, wallLayerMask);
+        wallAhead = raycastHit2D.collider != null ? true : false;
         return wallAhead;
     }
 }

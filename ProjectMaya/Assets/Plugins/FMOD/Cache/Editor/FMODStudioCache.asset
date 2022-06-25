@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 637917064000375052
+  lastModified: 637915956353608152
   FileSizes:
   - Name: Desktop
     Value: 26848
@@ -116,7 +116,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637917064000355057
+  lastModified: 637915956352863019
   FileSizes:
   - Name: Desktop
     Value: 1354
@@ -210,7 +210,7 @@ MonoBehaviour:
   - {fileID: 2287336632285706948}
   StringsBanks:
   - {fileID: -3266379407884158868}
-  cacheTime: 637917064000465056
+  cacheTime: 637915956354448293
   cacheVersion: 10
 --- !u!114 &1501546519157101102
 MonoBehaviour:
@@ -281,7 +281,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637917064000325054
+  lastModified: 637915956352848019
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -355,7 +355,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Weapons.bank
   Name: Weapons
   StudioPath: bank:/Weapons
-  lastModified: 637917064000465056
+  lastModified: 637915956354448293
   FileSizes:
   - Name: Desktop
     Value: 119904
@@ -402,7 +402,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Boss.bank
   Name: Boss
   StudioPath: bank:/Boss
-  lastModified: 637917064000365049
+  lastModified: 637915956353108071
   FileSizes:
   - Name: Desktop
     Value: 34752

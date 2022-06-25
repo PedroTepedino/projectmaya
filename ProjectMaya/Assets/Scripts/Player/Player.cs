@@ -65,14 +65,14 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // if (_mover is not Dashing)
-        //     return;
+        if (_mover is not Dashing)
+            return;
         
-        // if (collision.gameObject.CompareTag("Player"))
-        // {
-        //     var other = collision.gameObject.GetComponent<Player>();
-        //     HandleCollision(this, other);
-        // }
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            var other = collision.gameObject.GetComponent<Player>();
+            HandleCollision(this, other);
+        }
     }
 
 
@@ -89,16 +89,15 @@ public class Player : MonoBehaviour
         if (_mover is Dashing or Recovering)
             return;
         
-        // if (context.started)
-        // {
-        //     _mover = GetMover<Charging>();
-        // }
         if (context.started)
+        {
+            _mover = GetMover<Charging>();
+        }
+        else if (context.canceled)
         {
             _mover = GetMover<Dashing>();
             ((Dashing)_mover).OnEndDash += ListenOnDashEnd;
         }
-        Debug.Log("dash" + _mover);
     }
 
     private void ListenOnDashEnd()
@@ -134,7 +133,7 @@ public class Player : MonoBehaviour
         {
             ForceMover => new ForceMover(_playerInput.actions["Move"], _Rigidbody2D, _playerParameters),
             Charging => new Charging(_Rigidbody2D, _playerParameters),
-            Dashing => new Dashing(_playerInput.actions["Move"], _Rigidbody2D, _playerParameters),
+            Dashing => new Dashing(_Rigidbody2D, _playerParameters),
             Recovering => new Recovering(_Rigidbody2D, _playerParameters),       
             _ => null
         };
