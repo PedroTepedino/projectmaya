@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   Acceleration: 1
-  Friction: 0.1
+  Friction: 1.2
   SpeedDotMultiplier:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
+      time: -1
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -28,11 +28,20 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 65
+      weightedMode: 0
+      inWeight: 0.56666666
+      outWeight: 0.38333333
+    - serializedVersion: 3
       time: 1
-      value: 1
-      inSlope: 2
+      value: 0
+      inSlope: -0
       outSlope: 2
-      tangentMode: 0
+      tangentMode: 5
       weightedMode: 0
       inWeight: 0
       outWeight: 0
@@ -42,11 +51,29 @@ MonoBehaviour:
   StopRate: 0.1
   ChargingFriction: 0
   MaxAngle: 10
-  DashDistance: 10
+  DashDistance: 5
   DashTime: 0.5
   DashCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.04120832
+      outSlope: 0.04120832
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.05723205
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -56,7 +83,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  DashStartVelocity: 0
+  DashStartVelocity: 20
   DashEndVelocity: 0
   CollisionCenterOffset: 0
   CollisionRadius: 0
