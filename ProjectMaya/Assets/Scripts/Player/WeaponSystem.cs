@@ -7,15 +7,29 @@ public class WeaponSystem : MonoBehaviour
 {
     [SerializeField] private WeaponBase[] availableWeapons;
     [SerializeField] private PlayerInput playerInput;
+    [SerializeField] private GameObject aimSprite;
 
+    public Vector2 aimDirection {get; private set;}
+    private Camera camera;
     private WeaponBase selectedWeapon;
+    private Rigidbody2D weaponRigidbody;
     private int selectedWeaponID;
 
-    private void Awake() {
+    private void Awake() 
+    {
         playerInput = this.GetComponent<PlayerInput>();
+        camera = Camera.main;
+    }
+    
+    private void Start() 
+    {
+        selectedWeapon = availableWeapons[0];
+        selectedWeapon.gameObject.SetActive(true);
+        weaponRigidbody = selectedWeapon.gameObject.GetComponent<Rigidbody2D>();
     }
 
-    private void OnEnable() {
+    private void OnEnable() 
+    {
         playerInput.actions["Shoot"].started += ListenToShootButton;
         playerInput.actions["Reload"].started += ListenToReloadButton;
         playerInput.actions["SelectWeapon1"].started += ListenToSelectWeapon1Button;
@@ -24,9 +38,11 @@ public class WeaponSystem : MonoBehaviour
         playerInput.actions["SelectWeapon4"].started += ListenToSelectWeapon4Button;
         playerInput.actions["SelectNextWeapon"].started += ListenToSelectNextWeaponButton;
         playerInput.actions["SelectPreviousWeapon"].started += ListenToSelectPreviousWeaponButton;
+        playerInput.actions["Aim"].performed += Aim;
     }
 
-    private void OnDisable() {
+    private void OnDisable() 
+    {
         playerInput.actions["Shoot"].started -= ListenToShootButton;
         playerInput.actions["Reload"].started -= ListenToReloadButton;
         playerInput.actions["SelectWeapon1"].started -= ListenToSelectWeapon1Button;
@@ -35,6 +51,7 @@ public class WeaponSystem : MonoBehaviour
         playerInput.actions["SelectWeapon4"].started -= ListenToSelectWeapon4Button;
         playerInput.actions["SelectNextWeapon"].started -= ListenToSelectNextWeaponButton;
         playerInput.actions["SelectPreviousWeapon"].started -= ListenToSelectPreviousWeaponButton;
+        playerInput.actions["Aim"].performed -= Aim;
     }
 
     private void ListenToShootButton(InputAction.CallbackContext context)
@@ -51,8 +68,11 @@ public class WeaponSystem : MonoBehaviour
     {
         if (context.canceled)
         {
+            selectedWeapon.gameObject.SetActive(false);
             selectedWeapon = availableWeapons[0];
             selectedWeaponID = 0;
+            selectedWeapon.gameObject.SetActive(true);
+            weaponRigidbody = selectedWeapon.gameObject.GetComponent<Rigidbody2D>();
         }
     }
 
@@ -60,8 +80,11 @@ public class WeaponSystem : MonoBehaviour
     {
         if (context.canceled)
         {
+            selectedWeapon.gameObject.SetActive(false);
             selectedWeapon = availableWeapons[1];
-            selectedWeaponID = 0;
+            selectedWeaponID = 1;
+            selectedWeapon.gameObject.SetActive(true);
+            weaponRigidbody = selectedWeapon.gameObject.GetComponent<Rigidbody2D>();
         }
     }
 
@@ -69,8 +92,11 @@ public class WeaponSystem : MonoBehaviour
     {
         if (context.canceled)
         {
+            selectedWeapon.gameObject.SetActive(false);
             selectedWeapon = availableWeapons[2];
-            selectedWeaponID = 0;
+            selectedWeaponID = 2;
+            selectedWeapon.gameObject.SetActive(true);
+            weaponRigidbody = selectedWeapon.gameObject.GetComponent<Rigidbody2D>();
         }
     }
 
@@ -78,8 +104,11 @@ public class WeaponSystem : MonoBehaviour
     {
         if (context.canceled)
         {
+            selectedWeapon.gameObject.SetActive(false);
             selectedWeapon = availableWeapons[3];
-            selectedWeaponID = 0;
+            selectedWeaponID = 3;
+            selectedWeapon.gameObject.SetActive(true);
+            weaponRigidbody = selectedWeapon.gameObject.GetComponent<Rigidbody2D>();
         }
     }
 
@@ -87,9 +116,12 @@ public class WeaponSystem : MonoBehaviour
     {
         if (context.canceled)
         {
+            selectedWeapon.gameObject.SetActive(false);
             selectedWeaponID++;
             selectedWeaponID = (selectedWeaponID > 4 ? 0 : selectedWeaponID);
             selectedWeapon = availableWeapons[selectedWeaponID];
+            selectedWeapon.gameObject.SetActive(true);
+            weaponRigidbody = selectedWeapon.gameObject.GetComponent<Rigidbody2D>();
         }
     }
 
@@ -97,9 +129,30 @@ public class WeaponSystem : MonoBehaviour
     {
         if (context.canceled)
         {
+            selectedWeapon.gameObject.SetActive(false);
             selectedWeaponID--;
             selectedWeaponID = (selectedWeaponID < 0 ? 4 : selectedWeaponID);
             selectedWeapon = availableWeapons[selectedWeaponID];
+            selectedWeapon.gameObject.SetActive(true);
+            weaponRigidbody = selectedWeapon.gameObject.GetComponent<Rigidbody2D>();
         }
     }
+
+    private void Aim(InputAction.CallbackContext context)
+    {
+        var mouseWorldPosition = camera.ScreenToWorldPoint(context.ReadValue<Vector2>());
+        mouseWorldPosition.z = 0f;
+
+        aimSprite.transform.position = mouseWorldPosition;
+
+        aimDirection = mouseWorldPosition - this.gameObject.transform.position;
+        aimDirection.Normalize();
+        
+        var angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+        weaponRigidbody.MoveRotation(angle);
+    }
 }
+
+
+
+

@@ -42,8 +42,15 @@ public abstract class WeaponBase : MonoBehaviour
 
     public virtual void Reload()
     {
-        //wait reloadTime
+        StartCoroutine(ReloadTimer());
+    }
+
+    private IEnumerator ReloadTimer()
+    {
+        yield return new WaitForSeconds(reloadTime);
+
         magazineRemaning = magazineSize;
     }
+
 
 }

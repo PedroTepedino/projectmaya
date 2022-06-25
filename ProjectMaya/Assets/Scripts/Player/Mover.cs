@@ -60,16 +60,21 @@ public class ForceMover : Mover
 
     public override void Tick(float deltaTime)
     {
-        var input = getInput;
+        var input = _moveAction.ReadValue<Vector2>();
 
-        ApplyFriction(deltaTime, friction: _playerParameters.Friction);
+        if ( _Rigidbody2D.velocity.magnitude > 0.05f)
+        {
+            ApplyFriction(deltaTime, friction: _playerParameters.Friction);
+        }
 
         if (input.magnitude > 0.1f)
         {
             var planeForce = _Rigidbody2D.velocity;
             var dot = Vector2.Dot(input, planeForce);
-            AddForce(input * _playerParameters.Speed * deltaTime * _playerParameters.SpeedDotMultiplier.Evaluate(dot));
+            AddForce(input * _playerParameters.Speed * deltaTime /* _playerParameters.SpeedDotMultiplier.Evaluate(dot)*/);
         }
+
+        //_Rigidbody2D.velocity = input *_playerParameters.Speed * deltaTime;
     }
     
     private void AddForce(Vector2 force)
@@ -116,13 +121,20 @@ public class Dashing : Mover
 
     public Dashing() { }
     
-    public Dashing(Rigidbody2D Rigidbody2D, PlayerParameters playerParameters) 
+    public Dashing(InputAction moveAction, Rigidbody2D Rigidbody2D, PlayerParameters playerParameters) 
         : base(Rigidbody2D, playerParameters)
     {
         var transform = _Rigidbody2D.transform;
+        var input = moveAction.ReadValue<Vector2>();
         
         _initialPosition = transform.position;
-        _endPosition = _initialPosition + (transform.forward * _playerParameters.DashDistance);
+        if (input == Vector2.zero)
+        {
+            _endPosition = _initialPosition + (transform.forward * _playerParameters.DashDistance);
+        }else
+        {
+            _endPosition = _initialPosition + (new Vector3(input.x, input.y, 0) * _playerParameters.DashDistance);
+        }
 
         _timer = 0f;
     }
@@ -130,13 +142,14 @@ public class Dashing : Mover
 
     public override void Tick(float deltaTime)
     {
+        _Rigidbody2D.velocity = Vector2.zero;
         _timer += deltaTime;
 
-        // var t = _playerParameters.DashCurve.Evaluate(_timer / _playerParameters.DashTime);
-        // _Rigidbody2D.MovePosition(Vector3.Lerp(_initialPosition, _endPosition, t));
+        var t = _playerParameters.DashCurve.Evaluate(_timer / _playerParameters.DashTime);
+        _Rigidbody2D.MovePosition(Vector3.Lerp(_endPosition, _initialPosition, t));
 
-        _Rigidbody2D.velocity = _Rigidbody2D.transform.forward * _playerParameters.DashStartVelocity * 
-                              _playerParameters.DashVelocityCurve.Evaluate(_timer / _playerParameters.DashTime);
+        // _Rigidbody2D.velocity = _Rigidbody2D.transform.forward * _playerParameters.DashStartVelocity * 
+        //                       _playerParameters.DashVelocityCurve.Evaluate(_timer / _playerParameters.DashTime);
 
         if (isDashFinished)
         {
