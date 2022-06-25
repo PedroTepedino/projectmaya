@@ -4,19 +4,19 @@ using UnityEngine.InputSystem;
 
 public abstract class Mover
 {
-    protected readonly Rigidbody _rigidbody;
+    protected readonly Rigidbody2D _Rigidbody2D;
    
     protected readonly PlayerParameters _playerParameters;
 
     protected Mover()
     {
-        _rigidbody = null;
+        _Rigidbody2D = null;
         _playerParameters = null;
     }
     
-    protected Mover(Rigidbody rigidbody, PlayerParameters playerParameters)
+    protected Mover(Rigidbody2D Rigidbody2D, PlayerParameters playerParameters)
     {
-        _rigidbody = rigidbody;
+        _Rigidbody2D = Rigidbody2D;
         _playerParameters = playerParameters;
     }
 
@@ -24,7 +24,7 @@ public abstract class Mover
 
     protected void ApplyFriction(float deltaTime, float friction)
     {
-        var velocity = _rigidbody.velocity;
+        var velocity = _Rigidbody2D.velocity;
         // velocity -= velocity.normalized *
         //             (velocity.magnitude * velocity.magnitude * friction * deltaTime);
         var velocityToSubtract = velocity * friction * deltaTime;
@@ -34,7 +34,7 @@ public abstract class Mover
         }
 
         velocity -= velocityToSubtract;
-        _rigidbody.velocity = velocity;
+        _Rigidbody2D.velocity = velocity;
     }
 }
 
@@ -44,18 +44,17 @@ public class ForceMover : Mover
 
     public ForceMover() { }
     
-    public ForceMover(InputAction moveAction, Rigidbody rigidbody, PlayerParameters playerParameters) 
-        : base(rigidbody, playerParameters)
+    public ForceMover(InputAction moveAction, Rigidbody2D Rigidbody2D, PlayerParameters playerParameters) 
+        : base(Rigidbody2D, playerParameters)
     {
         _moveAction = moveAction;
     }
 
-    private Vector3 getInput
+    private Vector2 getInput
     {
         get
         {
-            var input = _moveAction.ReadValue<Vector2>();
-            return new Vector3(input.x, 0, input.y);
+            return  _moveAction.ReadValue<Vector2>();
         }
     }
 
@@ -67,16 +66,15 @@ public class ForceMover : Mover
 
         if (input.magnitude > 0.1f)
         {
-            var planeForce = _rigidbody.velocity;
-            planeForce.y = 0;
-            var dot = Vector3.Dot(input, planeForce);
+            var planeForce = _Rigidbody2D.velocity;
+            var dot = Vector2.Dot(input, planeForce);
             AddForce(input * _playerParameters.Speed * deltaTime * _playerParameters.SpeedDotMultiplier.Evaluate(dot));
         }
     }
     
-    private void AddForce(Vector3 force)
+    private void AddForce(Vector2 force)
     {
-        _rigidbody.velocity += force;
+        _Rigidbody2D.velocity += force/*new Vector2(force.x, force.z)*/;
     }
 }
 
@@ -84,24 +82,24 @@ public class Charging : Mover
 {
     public Charging() { }
     
-    public Charging(Rigidbody rigidbody, PlayerParameters playerParameters) 
-        : base(rigidbody, playerParameters)
+    public Charging(Rigidbody2D Rigidbody2D, PlayerParameters playerParameters) 
+        : base(Rigidbody2D, playerParameters)
     {
     }
 
     public override void Tick(float deltaTime)
     {
-        if (_rigidbody.velocity.magnitude > 0.1f)
+        if (_Rigidbody2D.velocity.magnitude > 0.1f)
             ApplyFriction(deltaTime, _playerParameters.ChargingFriction);
         else
-            _rigidbody.velocity = Vector3.zero;
+            _Rigidbody2D.velocity = Vector2.zero;
     }
     
     private void ApplyStopForce(float deltaTime, float stopRate)
     {
-        var velocity = _rigidbody.velocity;
+        var velocity = _Rigidbody2D.velocity;
         velocity -= velocity.normalized * (velocity.magnitude * stopRate * deltaTime);
-        _rigidbody.velocity = velocity;
+        _Rigidbody2D.velocity = velocity;
     }
 }
 
@@ -118,10 +116,10 @@ public class Dashing : Mover
 
     public Dashing() { }
     
-    public Dashing(Rigidbody rigidbody, PlayerParameters playerParameters) 
-        : base(rigidbody, playerParameters)
+    public Dashing(Rigidbody2D Rigidbody2D, PlayerParameters playerParameters) 
+        : base(Rigidbody2D, playerParameters)
     {
-        var transform = _rigidbody.transform;
+        var transform = _Rigidbody2D.transform;
         
         _initialPosition = transform.position;
         _endPosition = _initialPosition + (transform.forward * _playerParameters.DashDistance);
@@ -135,15 +133,15 @@ public class Dashing : Mover
         _timer += deltaTime;
 
         // var t = _playerParameters.DashCurve.Evaluate(_timer / _playerParameters.DashTime);
-        // _rigidbody.MovePosition(Vector3.Lerp(_initialPosition, _endPosition, t));
+        // _Rigidbody2D.MovePosition(Vector3.Lerp(_initialPosition, _endPosition, t));
 
-        _rigidbody.velocity = _rigidbody.transform.forward * _playerParameters.DashStartVelocity * 
+        _Rigidbody2D.velocity = _Rigidbody2D.transform.forward * _playerParameters.DashStartVelocity * 
                               _playerParameters.DashVelocityCurve.Evaluate(_timer / _playerParameters.DashTime);
 
         if (isDashFinished)
         {
             // Debug.Log($"timer = {_timer}");
-            // Debug.Log($"Dashing --- Distance => {(_initialPosition - _rigidbody.transform.position).magnitude} | speed = {_rigidbody.velocity.magnitude}");
+            // Debug.Log($"Dashing --- Distance => {(_initialPosition - _Rigidbody2D.transform.position).magnitude} | speed = {_Rigidbody2D.velocity.magnitude}");
         
             OnEndDash?.Invoke();
         }
@@ -158,33 +156,33 @@ public class Recovering : Mover
 
     public Recovering() {}
     
-    public Recovering(Rigidbody rigidbody, PlayerParameters playerParameters) 
-        : base(rigidbody, playerParameters)
+    public Recovering(Rigidbody2D Rigidbody2D, PlayerParameters playerParameters) 
+        : base(Rigidbody2D, playerParameters)
     {
-        // _rigidbody.velocity = Vector3.zero;
+        // _Rigidbody2D.velocity = Vector3.zero;
         // Debug.Log($"in tangent => {_playerParameters.DashCurve.keys[^1].inTangent} \n on tangent => {_playerParameters.DashCurve.keys[^1].outTangent}");
-        // // _rigidbody.velocity = _rigidbody.transform.forward * (_playerParameters.RecoverVelocity / _playerParameters.DashCurve.keys[^1].inTangent);
-        // _rigidbody.velocity = _rigidbody.transform.forward * (_playerParameters.DashDistance /
+        // // _Rigidbody2D.velocity = _Rigidbody2D.transform.forward * (_playerParameters.RecoverVelocity / _playerParameters.DashCurve.keys[^1].inTangent);
+        // _Rigidbody2D.velocity = _Rigidbody2D.transform.forward * (_playerParameters.DashDistance /
         //                                                       (_playerParameters.DashTime - 1f +
         //                                                        (1f / _playerParameters.DashCurve.keys[^1].inTangent)));
 
-        _initialPosition = _rigidbody.transform.position;
+        _initialPosition = _Rigidbody2D.transform.position;
     }
 
     public override void Tick(float deltaTime)
     {
          ApplyFriction(deltaTime, _playerParameters.RecoveryFriction);
-         // if (_rigidbody.velocity.magnitude <= _playerParameters.Speed)
+         // if (_Rigidbody2D.velocity.magnitude <= _playerParameters.Speed)
          //     OnEndRecovering?.Invoke();
          
-         // _rigidbody.velocity = _rigidbody.transform.forward * (_playerParameters.DashDistance /
+         // _Rigidbody2D.velocity = _Rigidbody2D.transform.forward * (_playerParameters.DashDistance /
          //                                                               (_playerParameters.DashTime - 1f +
          //                                                                (1f / _playerParameters.DashCurve.keys[^1].inTangent)));
 
-         // _rigidbody.velocity -= _rigidbody.velocity * _playerParameters.RecoveryFriction * deltaTime;
+         // _Rigidbody2D.velocity -= _Rigidbody2D.velocity * _playerParameters.RecoveryFriction * deltaTime;
         
-         // Debug.Log($"Recovering --- Distance => {(_initialPosition - _rigidbody.transform.position).magnitude} | speed = {_rigidbody.velocity.magnitude}");
-         if (_rigidbody.velocity.magnitude <= _playerParameters.Speed)
+         // Debug.Log($"Recovering --- Distance => {(_initialPosition - _Rigidbody2D.transform.position).magnitude} | speed = {_Rigidbody2D.velocity.magnitude}");
+         if (_Rigidbody2D.velocity.magnitude <= _playerParameters.Speed)
              OnEndRecovering?.Invoke();
     }
 }

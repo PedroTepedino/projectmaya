@@ -1,16 +1,16 @@
-﻿using DG.Tweening;
+using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerInput))]
 public class Player : MonoBehaviour
 {
     [SerializeField] [InlineEditor] 
     private PlayerParameters _playerParameters;
 
-    private Rigidbody _rigidbody;
+    private Rigidbody2D _Rigidbody2D;
 
     private Mover _mover;
     //private AimSystem _aimSystem;
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
 
     private void SetupComponents()
     {
-        _rigidbody = this.GetComponent<Rigidbody>();
+        _Rigidbody2D = this.GetComponent<Rigidbody2D>();
         _playerInput = this.GetComponent<PlayerInput>();
 
         //_aimSystem = new AimSystem(this.transform, _playerInput.actions["Move"], _playerParameters);
@@ -131,10 +131,10 @@ public class Player : MonoBehaviour
         T t = new();
         return t switch
         {
-            ForceMover => new ForceMover(_playerInput.actions["Move"], _rigidbody, _playerParameters),
-            Charging => new Charging(_rigidbody, _playerParameters),
-            Dashing => new Dashing(_rigidbody, _playerParameters),
-            Recovering => new Recovering(_rigidbody, _playerParameters),       
+            ForceMover => new ForceMover(_playerInput.actions["Move"], _Rigidbody2D, _playerParameters),
+            Charging => new Charging(_Rigidbody2D, _playerParameters),
+            Dashing => new Dashing(_Rigidbody2D, _playerParameters),
+            Recovering => new Recovering(_Rigidbody2D, _playerParameters),       
             _ => null
         };
     }
