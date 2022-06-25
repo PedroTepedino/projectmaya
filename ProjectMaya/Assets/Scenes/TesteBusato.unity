@@ -123,6 +123,68 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &216058068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 216058069}
+  - component: {fileID: 216058070}
+  m_Layer: 0
+  m_Name: Boss Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &216058069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216058068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &216058070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216058068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 2080689073
+      Data2: 1212070479
+      Data3: 210417543
+      Data4: 512816744
+    Path: event:/Songs/Boss Music
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &872657967
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,8 +510,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1387265472}
   - component: {fileID: 1387265471}
-  - component: {fileID: 1387265470}
   - component: {fileID: 1387265473}
+  - component: {fileID: 1387265474}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -457,14 +519,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1387265470
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387265469}
-  m_Enabled: 1
 --- !u!20 &1387265471
 Camera:
   m_ObjectHideFlags: 0
@@ -556,6 +610,20 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1387265474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387265469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!1 &1850612354
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +635,7 @@ GameObject:
   - component: {fileID: 1850612355}
   - component: {fileID: 1850612356}
   - component: {fileID: 1850612357}
+  - component: {fileID: 1850612358}
   m_Layer: 0
   m_Name: Boss Legs
   m_TagString: Untagged
@@ -629,7 +698,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1562996692, guid: 3b078555e8fc7714e8367e7a6c5dada3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -661,6 +730,39 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1850612358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850612354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ba1d47830882149a2829405f82afae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BossIdleSound:
+    Guid:
+      Data1: -1782726772
+      Data2: 1089932778
+      Data3: 564054407
+      Data4: 1509151810
+    Path: event:/Boss/Idle
+  BossWalkSound:
+    Guid:
+      Data1: 1670285929
+      Data2: 1332232257
+      Data3: 994258077
+      Data4: 115623720
+    Path: event:/Boss/Walking
+  BossHoverSound:
+    Guid:
+      Data1: -2027349662
+      Data2: 1184776110
+      Data3: 1702890150
+      Data4: 684702797
+    Path: event:/Boss/Hover
 --- !u!1 &1965583680
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,6 +774,9 @@ GameObject:
   - component: {fileID: 1965583683}
   - component: {fileID: 1965583682}
   - component: {fileID: 1965583681}
+  - component: {fileID: 1965583685}
+  - component: {fileID: 1965583684}
+  - component: {fileID: 1965583686}
   m_Layer: 0
   m_Name: TestePlayerBusato
   m_TagString: Untagged
@@ -759,13 +864,82 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1965583680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -1.83, z: 0}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1965583684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965583680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9331a8e913a1a2c45a94ad0ece01dc0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  rb: {fileID: 1965583685}
+--- !u!50 &1965583685
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965583680}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &1965583686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965583680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7b73744513b4e4f9fc1b66adfae2e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerDashSound:
+    Guid:
+      Data1: -353375191
+      Data2: 1222608560
+      Data3: -745383792
+      Data4: -495877230
+    Path: event:/Player/Player Dash
+  PlayerIdleSoundEvent:
+    Guid:
+      Data1: 1701807797
+      Data2: 1286823523
+      Data3: 2059088310
+      Data4: -985469547
+    Path: event:/Player/Player Hover Idle
+  PlayerMoveSoundEvent:
+    Guid:
+      Data1: -262539066
+      Data2: 1128928160
+      Data3: 1245037482
+      Data4: 1793922238
+    Path: event:/Player/Player Hover Moving
+  rb: {fileID: 1965583685}
 --- !u!1 &2124231403
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,7 +964,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124231403}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 2.19, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

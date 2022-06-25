@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d64aea06-2ec7-4cf1-a12c-70ef08ec4de5}">
+		<property name="assetPath">
+			<value>Maya_Animations+SFX_stems_Whirs-002 - Trimmed.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.59999999999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{90e9380b-9653-4722-9752-76f3867f93b5}</destination>
+		</relationship>
+	</object>
+</objects>

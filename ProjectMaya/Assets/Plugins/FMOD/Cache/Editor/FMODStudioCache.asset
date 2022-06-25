@@ -1,32 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8874859696130261732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Laser Charging
-  m_EditorClassIdentifier: 
-  Path: event:/Laser Charging
-  Guid:
-    Data1: -265257856
-    Data2: 1104723230
-    Data3: -207071586
-    Data4: -612575992
-  Banks:
-  - {fileID: 5267861699675596735}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-8815355468222072097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,12 +15,10 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 637915956353608152
-  FileSizes:
-  - Name: Desktop
-    Value: 26848
+  lastModified: 637917748188718149
+  FileSizes: []
   Exists: 1
---- !u!114 &-5743893737019712977
+--- !u!114 &-7008994142415523763
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,24 +28,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player Death
+  m_Name: event:/Boss/Walking
   m_EditorClassIdentifier: 
-  Path: event:/Player Death
+  Path: event:/Boss/Walking
   Guid:
-    Data1: -1162479456
-    Data2: 1135046990
-    Data3: -688647002
-    Data4: 1679687973
+    Data1: 1670285929
+    Data2: 1332232257
+    Data3: 994258077
+    Data4: 115623720
   Banks:
-  - {fileID: 5267861699675596735}
+  - {fileID: 7469585915214471052}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
---- !u!114 &-4273621859794148964
+  Length: 600
+--- !u!114 &-6770201307354119822
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,23 +55,77 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player Dash
+  m_Name: event:/Songs/Boss Music
   m_EditorClassIdentifier: 
-  Path: event:/Player Dash
+  Path: event:/Songs/Boss Music
   Guid:
-    Data1: -353375191
-    Data2: 1222608560
-    Data3: -745383792
-    Data4: -495877230
+    Data1: 2080689073
+    Data2: 1212070479
+    Data3: 210417543
+    Data4: 512816744
+  Banks:
+  - {fileID: 4480898534831855544}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 211200
+--- !u!114 &-3972372859729846274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Player Hover Idle
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Player Hover Idle
+  Guid:
+    Data1: 1701807797
+    Data2: 1286823523
+    Data3: 2059088310
+    Data4: -985469547
   Banks:
   - {fileID: -8815355468222072097}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 700
+--- !u!114 &-3774246090561434596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Songs/Menu Music
+  m_EditorClassIdentifier: 
+  Path: event:/Songs/Menu Music
+  Guid:
+    Data1: -302910064
+    Data2: 1153947689
+    Data3: 169430667
+    Data4: -2110872825
+  Banks:
+  - {fileID: 4480898534831855544}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 64000
 --- !u!114 &-3266379407884158868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,12 +141,12 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637915956352863019
+  lastModified: 637917748187752981
   FileSizes:
-  - Name: Desktop
-    Value: 1354
+  - Name: 
+    Value: 1734
   Exists: 1
---- !u!114 &-3122419666283548924
+--- !u!114 &-1660293707435805272
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,16 +156,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Energy Pistol (Light)
+  m_Name: event:/UI/Confirm
   m_EditorClassIdentifier: 
-  Path: event:/Energy Pistol (Light)
+  Path: event:/UI/Confirm
   Guid:
-    Data1: -1063355929
-    Data2: 1262423236
-    Data3: 493768584
-    Data4: -263588637
+    Data1: 1892838679
+    Data2: 1201983625
+    Data3: 504793529
+    Data4: 1063193546
   Banks:
-  - {fileID: 5267861699675596735}
+  - {fileID: 2287336632285706948}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -148,7 +173,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-2473082019250529468
+--- !u!114 &-541327728651172688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,14 +183,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Boss Hover
+  m_Name: event:/Boss/Hover
   m_EditorClassIdentifier: 
-  Path: event:/Boss Hover
+  Path: event:/Boss/Hover
   Guid:
-    Data1: -316220399
-    Data2: 1233992127
-    Data3: 814605958
-    Data4: 849196319
+    Data1: -2027349662
+    Data2: 1184776110
+    Data3: 1702890150
+    Data4: 684702797
   Banks:
   - {fileID: 7469585915214471052}
   IsStream: 0
@@ -174,7 +199,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 3050
+  Length: 600
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,27 +217,30 @@ MonoBehaviour:
   - {fileID: 2287336632285706948}
   - {fileID: 7469585915214471052}
   - {fileID: -8815355468222072097}
-  - {fileID: 5267861699675596735}
+  - {fileID: 4480898534831855544}
   EditorEvents:
-  - {fileID: -2473082019250529468}
-  - {fileID: 4108398353619490081}
-  - {fileID: -4273621859794148964}
-  - {fileID: 8157519670268733077}
-  - {fileID: 2367535769765926412}
-  - {fileID: 1501546519157101102}
-  - {fileID: 1578870324744056724}
-  - {fileID: -8874859696130261732}
-  - {fileID: 5473797298494150932}
-  - {fileID: -5743893737019712977}
-  - {fileID: -3122419666283548924}
+  - {fileID: 6400341754612155374}
+  - {fileID: -541327728651172688}
+  - {fileID: -7008994142415523763}
+  - {fileID: 8783947743979236082}
+  - {fileID: 6944511171346227034}
+  - {fileID: -1660293707435805272}
+  - {fileID: -3774246090561434596}
+  - {fileID: -6770201307354119822}
+  - {fileID: 6816948574556964357}
+  - {fileID: 367427395368238098}
+  - {fileID: 2620629117227427491}
+  - {fileID: -3972372859729846274}
+  - {fileID: 289549054948284263}
+  - {fileID: 515221777806264069}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2287336632285706948}
   StringsBanks:
   - {fileID: -3266379407884158868}
-  cacheTime: 637915956354448293
+  cacheTime: 637917748188718149
   cacheVersion: 10
---- !u!114 &1501546519157101102
+--- !u!114 &289549054948284263
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,24 +250,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Machine Gun
+  m_Name: event:/Player/Player Hover Moving
   m_EditorClassIdentifier: 
-  Path: event:/Machine Gun
+  Path: event:/Player/Player Hover Moving
   Guid:
-    Data1: -2145631939
-    Data2: 1077057812
-    Data3: 1029574794
-    Data4: 1499155920
+    Data1: -262539066
+    Data2: 1128928160
+    Data3: 1245037482
+    Data4: 1793922238
   Banks:
-  - {fileID: 5267861699675596735}
+  - {fileID: -8815355468222072097}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 7000
---- !u!114 &1578870324744056724
+  Length: 450
+--- !u!114 &367427395368238098
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -249,16 +277,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Energy Pistol (Heavy)
+  m_Name: event:/Player/Player Death
   m_EditorClassIdentifier: 
-  Path: event:/Energy Pistol (Heavy)
+  Path: event:/Player/Player Death
   Guid:
-    Data1: -1889605300
-    Data2: 1253681520
-    Data3: -1485608261
-    Data4: -2076767892
+    Data1: -1162479456
+    Data2: 1135046990
+    Data3: -688647002
+    Data4: 1679687973
   Banks:
-  - {fileID: 5267861699675596735}
+  - {fileID: -8815355468222072097}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &515221777806264069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Player Damage
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Player Damage
+  Guid:
+    Data1: -361377077
+    Data2: 1086091545
+    Data3: 387852675
+    Data4: -557816035
+  Banks:
+  - {fileID: -8815355468222072097}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -281,12 +336,10 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637915956352848019
-  FileSizes:
-  - Name: Desktop
-    Value: 1036
+  lastModified: 637917748187732971
+  FileSizes: []
   Exists: 1
---- !u!114 &2367535769765926412
+--- !u!114 &2620629117227427491
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,16 +349,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Laser Firing
+  m_Name: event:/Player/Energy Pistol (Light)
   m_EditorClassIdentifier: 
-  Path: event:/Laser Firing
+  Path: event:/Player/Energy Pistol (Light)
   Guid:
-    Data1: 1263463731
-    Data2: 1270512651
-    Data3: -1559893585
-    Data4: -1451430659
+    Data1: -1063355929
+    Data2: 1262423236
+    Data3: 493768584
+    Data4: -263588637
   Banks:
-  - {fileID: 5267861699675596735}
+  - {fileID: -8815355468222072097}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -313,34 +366,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &4108398353619490081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Boss Steps
-  m_EditorClassIdentifier: 
-  Path: event:/Boss Steps
-  Guid:
-    Data1: -1800115769
-    Data2: 1192480010
-    Data3: -1435153519
-    Data4: 1901968829
-  Banks:
-  - {fileID: 7469585915214471052}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &5267861699675596735
+--- !u!114 &4480898534831855544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -350,17 +376,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Weapons.bank
+  m_Name: bank:/Music.bank
   m_EditorClassIdentifier: 
-  Path: ProjectMayaFMODProject/Build/Desktop/Weapons.bank
-  Name: Weapons
-  StudioPath: bank:/Weapons
-  lastModified: 637915956354448293
-  FileSizes:
-  - Name: Desktop
-    Value: 119904
+  Path: ProjectMayaFMODProject/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 637917748188493112
+  FileSizes: []
   Exists: 1
---- !u!114 &5473797298494150932
+--- !u!114 &6400341754612155374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -370,16 +394,70 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Shotgun
+  m_Name: event:/Boss/Energy Pistol (Heavy)
   m_EditorClassIdentifier: 
-  Path: event:/Shotgun
+  Path: event:/Boss/Energy Pistol (Heavy)
   Guid:
-    Data1: -267238260
-    Data2: 1086226220
-    Data3: -641194822
-    Data4: 557699572
+    Data1: -1889605300
+    Data2: 1253681520
+    Data3: -1485608261
+    Data4: -2076767892
   Banks:
-  - {fileID: 5267861699675596735}
+  - {fileID: 7469585915214471052}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6816948574556964357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Player Dash
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Player Dash
+  Guid:
+    Data1: -353375191
+    Data2: 1222608560
+    Data3: -745383792
+    Data4: -495877230
+  Banks:
+  - {fileID: -8815355468222072097}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6944511171346227034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Select
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Select
+  Guid:
+    Data1: 1319530511
+    Data2: 1202973761
+    Data3: -1699154010
+    Data4: 1693025226
+  Banks:
+  - {fileID: 2287336632285706948}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -402,12 +480,10 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Boss.bank
   Name: Boss
   StudioPath: bank:/Boss
-  lastModified: 637915956353108071
-  FileSizes:
-  - Name: Desktop
-    Value: 34752
+  lastModified: 637917748187527943
+  FileSizes: []
   Exists: 1
---- !u!114 &8157519670268733077
+--- !u!114 &8783947743979236082
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -417,20 +493,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player Steps
+  m_Name: event:/Boss/Idle
   m_EditorClassIdentifier: 
-  Path: event:/Player Steps
+  Path: event:/Boss/Idle
   Guid:
-    Data1: 2031080379
-    Data2: 1189386578
-    Data3: -135615057
-    Data4: -85040440
+    Data1: -1782726772
+    Data2: 1089932778
+    Data3: 564054407
+    Data4: 1509151810
   Banks:
-  - {fileID: -8815355468222072097}
+  - {fileID: 7469585915214471052}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 800
