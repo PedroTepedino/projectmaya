@@ -7,24 +7,26 @@ public class PlayerAnimatorController : MonoBehaviour
 {
    [SerializeField] private Animator playerAnimator;
    [SerializeField] private PlayerInput playerInput;
-   [SerializeField] private Rigidbody playerRigidbody;
+   [SerializeField] private Rigidbody2D playerRigidbody;
    [SerializeField] private LifeSystem playerLifeSystem;
    [SerializeField] private SpriteRenderer playerSprite;
+   [SerializeField] private Player playerController;
+   [SerializeField] private WeaponSystem playerWeaponSystem;
 
    private bool dashing = false;
 
    private void Awake() 
    {
         playerInput = this.GetComponent<PlayerInput>();
-        playerRigidbody = this.GetComponent<Rigidbody>();
-        playerAnimator = this.GetComponentInChildren<Animator>();
+        playerRigidbody = this.GetComponent<Rigidbody2D>();
         playerLifeSystem = this.GetComponent<LifeSystem>();
-        playerSprite = this.GetComponent<SpriteRenderer>();
+        playerController = this.GetComponent<Player>();
+        playerAnimator = this.GetComponentInChildren<Animator>();
+        playerWeaponSystem = this.GetComponentInChildren<WeaponSystem>();
    }
 
    private void OnEnable() 
    {
-        playerInput.actions["Dash"].started += ListenToDashButton;
         playerInput.actions["Dash"].canceled += ListenToDashButton;
 
         playerLifeSystem.OnChangeLife += ListenDamage;
@@ -33,7 +35,6 @@ public class PlayerAnimatorController : MonoBehaviour
 
    private void OnDisable() 
    {
-        playerInput.actions["Dash"].started -= ListenToDashButton;
         playerInput.actions["Dash"].canceled -= ListenToDashButton;
 
         playerLifeSystem.OnChangeLife -= ListenDamage;
@@ -43,6 +44,8 @@ public class PlayerAnimatorController : MonoBehaviour
    private void Update() {
         GetInputDirection();
         GetVelocity();
+        GetDashing();
+        GetAimDirection();
         FlipSprite();
         
    }
@@ -62,24 +65,21 @@ public class PlayerAnimatorController : MonoBehaviour
 
    private void GetAimDirection()
    {
-        var aim = playerInput.actions["Move"].ReadValue<Vector2>();
+        var aim = playerWeaponSystem.aimDirection;
 
         playerAnimator.SetFloat("aimX", aim.x);
         playerAnimator.SetFloat("aimY", aim.y);
    }
 
+   private void GetDashing()
+   {
+        dashing = (playerController.Mover is Dashing);
+        playerAnimator.SetBool("dashing", dashing);
+   }
+
     private void ListenToDashButton(InputAction.CallbackContext context)
     {
-        if (!dashing)
-        {
-            playerAnimator.SetTrigger("dash");
-            dashing = true;
-        }
-    }
-
-    public void ListenDashEnd()
-    {
-        dashing = false;
+        playerAnimator.SetTrigger("dash");
     }
 
     private void ListenDamage()
@@ -99,12 +99,14 @@ public class PlayerAnimatorController : MonoBehaviour
 
     private void FlipSprite()
     {
-        if (playerInput.actions["Move"].ReadValue<Vector2>().x < 0)
-        {
-            transform.localScale = new Vector2(-1f, 1f);
-        }else
-        {
-            transform.localScale = new Vector2(1f, 1f);
-        }
+        playerSprite.flipX = (playerInput.actions["Move"].ReadValue<Vector2>().x < 0);
+        // if (playerInput.actions["Move"].ReadValue<Vector2>().x < 0)
+        // {
+        //     //transform.localScale = new Vector2(-1f, 1f);
+        //     playerSprite.flipX = true;
+        // }else
+        // {
+        //     //transform.localScale = new Vector2(1f, 1f);
+        // }
     }
 }

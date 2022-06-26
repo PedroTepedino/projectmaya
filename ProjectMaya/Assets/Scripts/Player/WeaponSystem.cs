@@ -17,7 +17,7 @@ public class WeaponSystem : MonoBehaviour
 
     private void Awake() 
     {
-        playerInput = this.GetComponent<PlayerInput>();
+        playerInput = this.GetComponentInParent<PlayerInput>();
         camera = Camera.main;
     }
     
@@ -38,7 +38,7 @@ public class WeaponSystem : MonoBehaviour
         playerInput.actions["SelectWeapon4"].started += ListenToSelectWeapon4Button;
         playerInput.actions["SelectNextWeapon"].started += ListenToSelectNextWeaponButton;
         playerInput.actions["SelectPreviousWeapon"].started += ListenToSelectPreviousWeaponButton;
-        playerInput.actions["Aim"].performed += Aim;
+        playerInput.actions["Aim"].performed += ListenToAim;
     }
 
     private void OnDisable() 
@@ -51,7 +51,22 @@ public class WeaponSystem : MonoBehaviour
         playerInput.actions["SelectWeapon4"].started -= ListenToSelectWeapon4Button;
         playerInput.actions["SelectNextWeapon"].started -= ListenToSelectNextWeaponButton;
         playerInput.actions["SelectPreviousWeapon"].started -= ListenToSelectPreviousWeaponButton;
-        playerInput.actions["Aim"].performed -= Aim;
+        playerInput.actions["Aim"].performed -= ListenToAim;
+    }
+
+    private void Update() {
+        var mousePosition = playerInput.actions["aim"].ReadValue<Vector2>();
+        var mouseWorldPosition = camera.ScreenToWorldPoint(mousePosition);
+        Debug.Log("mouseWorldPosition: " + mouseWorldPosition);
+        mouseWorldPosition.z = 0f;
+
+        aimSprite.transform.position = mouseWorldPosition;
+
+        aimDirection = mouseWorldPosition - this.gameObject.transform.position;
+        //aimDirection.Normalize();
+        
+        var angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+        weaponRigidbody.MoveRotation(angle);
     }
 
     private void ListenToShootButton(InputAction.CallbackContext context)
@@ -138,9 +153,11 @@ public class WeaponSystem : MonoBehaviour
         }
     }
 
-    private void Aim(InputAction.CallbackContext context)
+    private void ListenToAim(InputAction.CallbackContext context)
     {
+        Debug.Log("mouse: " + context.ReadValue<Vector2>());
         var mouseWorldPosition = camera.ScreenToWorldPoint(context.ReadValue<Vector2>());
+        Debug.Log("mouseWorldPosition: " + context.ReadValue<Vector2>());
         mouseWorldPosition.z = 0f;
 
         aimSprite.transform.position = mouseWorldPosition;

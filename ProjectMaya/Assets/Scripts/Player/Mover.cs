@@ -146,6 +146,7 @@ public class Dashing : Mover
         _timer += deltaTime;
 
         var t = _playerParameters.DashCurve.Evaluate(_timer / _playerParameters.DashTime);
+        Debug.Log(_timer / _playerParameters.DashTime);
         _Rigidbody2D.MovePosition(Vector3.Lerp(_endPosition, _initialPosition, t));
 
         // _Rigidbody2D.velocity = _Rigidbody2D.transform.forward * _playerParameters.DashStartVelocity * 
