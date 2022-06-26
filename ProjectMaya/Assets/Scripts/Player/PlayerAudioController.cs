@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAudioController : MonoBehaviour
 { 
     public FMODUnity.EventReference PlayerDashSound;
+    public FMODUnity.EventReference PlayerHitSound;
     public FMODUnity.EventReference PlayerIdleSoundEvent;
     public FMODUnity.EventReference PlayerMoveSoundEvent;
 
@@ -38,6 +39,11 @@ public class PlayerAudioController : MonoBehaviour
     void PlayDashSound()
     {
         FMODUnity.RuntimeManager.PlayOneShot(PlayerDashSound, transform.position);
+    }
+
+    void PlayHitSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(PlayerHitSound, transform.position);
     }
 
     bool IsPlaying(FMOD.Studio.EventInstance instance)
