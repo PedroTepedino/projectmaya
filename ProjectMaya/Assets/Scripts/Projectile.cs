@@ -5,15 +5,16 @@ using UnityEngine.Pool;
 
 public abstract class Projectile : MonoBehaviour
 {
-    public int damage;
-    public float speed;
-    public float lifetime = 5f;
-    public LayerMask layersToHit;
-    public Vector2 direction { get;  set; }
+    [SerializeField] private int damage;
+    [SerializeField] private float speed;
+    [SerializeField] private float lifetime = 5f;
+    [SerializeField] private string tagToHit;
+    [SerializeField] private LayerMask layersToHit;
+    [SerializeField] private ParticleSystem destroyParticle;
 
-    public ParticleSystem destroyParticle;
+    [HideInInspector] public Vector2 direction;
 
-    IObjectPool<Projectile> pool;
+    private IObjectPool<Projectile> pool;
 
     public void SetPool(IObjectPool<Projectile> toSetPool) => pool = toSetPool;
     
@@ -44,6 +45,15 @@ public abstract class Projectile : MonoBehaviour
     }
 
     public abstract IEnumerator Modifier();
-
+    
+    public virtual void OnCollisionEnter2D(Collision2D other) 
+    {
+        var collidedGameObject = other.gameObject;
+        if (collidedGameObject.CompareTag(tagToHit))
+        {
+            collidedGameObject.GetComponent<LifeSystem>().Damage(damage);
+        }
+        Destroy();
+    }
 
 }
