@@ -5,19 +5,43 @@ using UnityEngine.Pool;
 
 public abstract class WeaponBase : MonoBehaviour
 {
-    public int weaponPriority;
-    public int projectileDamage;
-    public int magazineSize;
-    public int magazineRemaning;
-    public float reloadTime;
-    public float shootingSpeed;
-    public Projectile projectilePrefab;
+    [SerializeField] protected int weaponPriority;
+    public int WeaponPriority => weaponPriority;
+    [SerializeField] protected int magazineSize;
+    public int magazineRemaning {get; protected set;}
+    [SerializeField] protected float reloadTime;
+    [SerializeField] protected float shootingSpeed;
+    [SerializeField] protected Projectile projectilePrefab;
+    [SerializeField] protected Transform spawnPosition;
+    [SerializeField] protected int startingPoolSize = 20;
+    [SerializeField] protected int maxPoolSize = 100;
 
-    public ObjectPool<Projectile> pool;
+    [HideInInspector] public ObjectPool<Projectile> pool {get; protected set;}
+    [HideInInspector] public Vector2 aimDirection;
+
+    protected float timerToShoot = 0;
 
     protected void Awake() 
     {
-        pool = new ObjectPool<Projectile>(CreateProjectile, OnTakeProjectileFromPool, OnReturnProjectileToPool);
+        pool = new ObjectPool<Projectile>(CreateProjectile, 
+                                          OnTakeProjectileFromPool, 
+                                          OnReturnProjectileToPool, 
+                                          OnDestroyProjectileFromPool, 
+                                          true, 
+                                          startingPoolSize, 
+                                          maxPoolSize);
+
+        // for (int i = 0; i < startingPoolSize; i++)
+        // {
+        //     var projectile = CreateProjectile();
+        //     projectile.gameObject.SetActive(false);
+        // }
+
+        magazineRemaning = magazineSize;
+    }
+
+    private void Update() {
+        timerToShoot -= Time.deltaTime;
     }
 
     Projectile CreateProjectile()
@@ -29,13 +53,18 @@ public abstract class WeaponBase : MonoBehaviour
 
     void OnTakeProjectileFromPool(Projectile projectile)
     {
-        projectile.transform.position = this.gameObject.transform.position;
+        projectile.transform.position = spawnPosition.transform.position;
         projectile.gameObject.SetActive(true);
     }
 
     void OnReturnProjectileToPool(Projectile projectile)
     {
         projectile.gameObject.SetActive(false);
+    }
+
+    void OnDestroyProjectileFromPool(Projectile projectile)
+    {
+        Destroy(projectile.gameObject);
     }
 
     public abstract void Shoot();

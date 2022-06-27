@@ -25,14 +25,14 @@ public class Phase2AracnoState : IState
 
     public void OnEnter()
     {
-        
+        Debug.Log("Phase2");        
     }
 
     public void OnExit()
     {
         if (!ownerGameObject.GetComponent<Targeting>().hasTarget)
         {
-            ownerGameObject.GetComponent<LifeSystem>().Heal(ownerGameObject.GetComponent<LifeSystem>()._maxLife);
+            ownerGameObject.GetComponent<LifeSystem>().Heal(ownerGameObject.GetComponent<LifeSystem>().MaxLife);
         }
     }
 

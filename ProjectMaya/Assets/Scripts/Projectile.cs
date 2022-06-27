@@ -17,18 +17,22 @@ public abstract class Projectile : MonoBehaviour
     private IObjectPool<Projectile> pool;
 
     public void SetPool(IObjectPool<Projectile> toSetPool) => pool = toSetPool;
+
+
     
-    protected void OnEnable() {
+    protected void OnEnable() 
+    {
         Invoke("Destroy", lifetime);
     }
 
-    protected void FixedUpdate() {
+    protected void FixedUpdate() 
+    {
         Move();
     }
 
     public virtual void Move()
     {
-        transform.Translate(direction * speed, Space.World);
+        transform.Translate(direction * speed * 0.01f, Space.World);
     }
 
     protected void Destroy()
@@ -42,6 +46,7 @@ public abstract class Projectile : MonoBehaviour
 
     protected private void OnDisable() {
         CancelInvoke();
+        destroyParticle.Stop();
     }
 
     public abstract IEnumerator Modifier();

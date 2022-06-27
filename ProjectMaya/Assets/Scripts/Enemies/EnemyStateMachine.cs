@@ -11,7 +11,6 @@ public abstract class EnemyStateMachine : MonoBehaviour
     // public bool alive = true;
 
     [SerializeField][AssetsOnly][InlineEditor] protected EnemyParameters _enemyParameters;
-    // protected EnemyAnimationController animationController;
     protected Attack attack;
     // protected int healthPoints;
     protected Rigidbody2D enemyRigidbody;
@@ -19,7 +18,6 @@ public abstract class EnemyStateMachine : MonoBehaviour
 
     protected virtual void Awake()
     {
-        // animationController = GetComponentInChildren<EnemyAnimationController>();
         enemyRigidbody = GetComponent<Rigidbody2D>();
         targeting = GetComponent<Targeting>();
         attack = GetComponent<Attack>();

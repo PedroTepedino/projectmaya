@@ -24,10 +24,9 @@ public class Attack : MonoBehaviour
     [SerializeField]
     [AssetsOnly]
     [InlineEditor]
-    private WeaponBase[] availibleAttacks;
+    private WeaponBase[] availableAttacks;
     public WeaponBase selectedWeapon {get; private set;}
 
-    // private EnemyAnimationController animationController;
     private EnemyStateMachine _controller;
     //private int attackChancesSum = 1;
     private int selectedAttackIndex;
@@ -40,11 +39,10 @@ public class Attack : MonoBehaviour
     {
         _controller = GetComponent<EnemyStateMachine>();
 
-        if (availibleAttacks.Length > 0)
+        if (availableAttacks.Length > 0)
         {
-            selectedWeapon = availibleAttacks[0];
+            selectedWeapon = availableAttacks[0];
         }
-        // animationController = GetComponent<EnemyAnimationController>();
     }
 
     private void Start()
@@ -65,26 +63,20 @@ public class Attack : MonoBehaviour
         //     accumulatedChance += avalibleAttacks[i].attackChance;
         //     if (assortedChance <= accumulatedChance)
         //     {
-        //         // animationController.TriggerAnimationAttack(avalibleAttacks[i].attackAnimationName);
         //         selectedAttackIndex = i;
         //         break;
         //     }
         // }
 
-        for (int i = 0; i < availibleAttacks.Length; i++)
+        for (int i = 0; i < availableAttacks.Length; i++)
         {
-            if ((selectedWeapon.weaponPriority < availibleAttacks[i].weaponPriority) && (availibleAttacks[i].magazineRemaning > 0))
+            if ((selectedWeapon.WeaponPriority < availableAttacks[i].WeaponPriority) && (availableAttacks[i].magazineRemaning > 0))
             {
-                selectedWeapon = availibleAttacks[i];
+                selectedWeapon = availableAttacks[i];
             }
         }
 
         selectedWeapon.Shoot();
         OnAttack?.Invoke();
     }
-
-    // public void ListenAttackFinished()
-    // {
-    //     avalibleAttacks[selectedAttackIndex].AttackAction(this.transform, collisionLayerMask, _controller);
-    // }
 }

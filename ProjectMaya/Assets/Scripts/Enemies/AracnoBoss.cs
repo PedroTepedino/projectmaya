@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AracnoBoss : EnemyStateMachine
 {
-    LifeSystem lifeSystem;
+    private LifeSystem lifeSystem;
+    private bool halfLife => (lifeSystem._currentLife < lifeSystem.MaxLife/2);
     protected override void Awake()
     {
         base.Awake();
@@ -17,9 +18,9 @@ public class AracnoBoss : EnemyStateMachine
 
         stateMachine.SetState(idleState);
 
-        stateMachine.AddTransition(idleState, phase1AracnoState, () => targeting.hasTarget && (lifeSystem._currentLife >= lifeSystem._maxLife/2));
-        stateMachine.AddTransition(phase1AracnoState, phase2AracnoState, () => targeting.hasTarget && (lifeSystem._currentLife < lifeSystem._maxLife/2));
-        stateMachine.AddTransition(phase2AracnoState, phase3AracnoState, () => targeting.hasTarget && (lifeSystem._currentLife < lifeSystem._maxLife/4));
+        stateMachine.AddTransition(idleState, phase1AracnoState, () => targeting.hasTarget);
+        stateMachine.AddTransition(phase1AracnoState, phase2AracnoState, () => targeting.hasTarget && (lifeSystem._currentLife < lifeSystem.MaxLife/2));
+        stateMachine.AddTransition(phase2AracnoState, phase3AracnoState, () => targeting.hasTarget && (lifeSystem._currentLife < lifeSystem.MaxLife/4));
         stateMachine.AddTransition(phase1AracnoState, idleState, () => !targeting.hasTarget);
         stateMachine.AddTransition(phase2AracnoState, idleState, () => !targeting.hasTarget);
         stateMachine.AddTransition(phase3AracnoState, idleState, () => !targeting.hasTarget);

@@ -26,10 +26,13 @@ public class IdleState : IState
         ownerRigidbody.velocity = Vector2.zero;
         timer = 0f;
         idleTime = Random.Range(minIdleTime, maxIdleTime);
+        Debug.Log("Idle");
     }
 
     public void OnExit()
-    { }
+    { 
+
+    }
 
     public void Tick()
     {

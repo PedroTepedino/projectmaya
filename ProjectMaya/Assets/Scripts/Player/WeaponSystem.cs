@@ -57,7 +57,6 @@ public class WeaponSystem : MonoBehaviour
     private void Update() {
         var mousePosition = playerInput.actions["aim"].ReadValue<Vector2>();
         var mouseWorldPosition = camera.ScreenToWorldPoint(mousePosition);
-        Debug.Log("mouseWorldPosition: " + mouseWorldPosition);
         mouseWorldPosition.z = 0f;
 
         aimSprite.transform.position = mouseWorldPosition;
@@ -67,6 +66,8 @@ public class WeaponSystem : MonoBehaviour
         
         var angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
         weaponRigidbody.MoveRotation(angle);
+
+        selectedWeapon.aimDirection = aimDirection;
     }
 
     private void ListenToShootButton(InputAction.CallbackContext context)
@@ -155,9 +156,7 @@ public class WeaponSystem : MonoBehaviour
 
     private void ListenToAim(InputAction.CallbackContext context)
     {
-        Debug.Log("mouse: " + context.ReadValue<Vector2>());
         var mouseWorldPosition = camera.ScreenToWorldPoint(context.ReadValue<Vector2>());
-        Debug.Log("mouseWorldPosition: " + context.ReadValue<Vector2>());
         mouseWorldPosition.z = 0f;
 
         aimSprite.transform.position = mouseWorldPosition;

@@ -6,7 +6,11 @@ public class BossRocketLauncher : WeaponBase
 {
     public override void Shoot()
     {
-        var projectile = pool.Get();
-        projectile.direction = this.transform.forward; // trocar foward pela posição do player
+        if (timerToShoot < 0 && magazineRemaning > 0)
+        {
+            var projectile = pool.Get();
+            projectile.direction = this.transform.forward;
+            magazineRemaning--;
+        }
     }    
 }

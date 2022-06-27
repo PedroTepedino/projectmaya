@@ -32,13 +32,14 @@ public class Phase3AracnoState : IState
     public void OnEnter()
     {
         spiralStarted = false;
+        Debug.Log("Phase3");        
     }
 
     public void OnExit()
     {
         if (!ownerGameObject.GetComponent<Targeting>().hasTarget)
         {
-            ownerGameObject.GetComponent<LifeSystem>().Heal(ownerGameObject.GetComponent<LifeSystem>()._maxLife);
+            ownerGameObject.GetComponent<LifeSystem>().Heal(ownerGameObject.GetComponent<LifeSystem>().MaxLife);
         }
     }
 

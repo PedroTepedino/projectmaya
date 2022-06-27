@@ -3,13 +3,18 @@ using UnityEngine;
 
 public class LifeSystem : MonoBehaviour
 {
-    public int _maxLife { get; private set; }
+    [SerializeField] private int _maxLife;
+    public int MaxLife => _maxLife;
     public int _currentLife { get; private set; }
 
     private bool IsDead => _currentLife <= 0;
 
     public Action OnDie;
     public Action OnChangeLife;
+
+    private void Awake() {
+        _currentLife = _maxLife;
+    }
 
     public LifeSystem(int maxLife)
     {

@@ -51,6 +51,48 @@ public class Targeting : MonoBehaviour
         }
     }
 
+    private bool TargetingAction()
+    {
+        if (bossEnemy)
+        {
+            // var hitObjectBoss = Physics2D.OverlapArea(bossZoneCornerA, bossZoneCornerB, targetingLayerMask);
+            // if (hitObjectBoss != null)
+            // {
+            //     Debug.Log(hitObjectBoss.gameObject);    
+            //     target = CheckHit(hitObjectBoss);
+            // }
+            // return target != null;
+            target = FindObjectOfType<Player>().gameObject.transform;
+            return target != null;
+        }
+
+        RaycastHit2D hitObject =
+            Physics2D.Raycast(transform.position + new Vector3(targetingCenter.x, targetingCenter.y, 0),
+                controller.movingRight ? Vector2.right : Vector2.left, lookingRange, targetingLayerMask);
+        target = CheckHit(hitObject);
+        return target != null;
+    }
+
+    private Transform CheckHit(Collider2D hit)
+    {
+        if (hit.gameObject.CompareTag("Player"))
+        {
+            return hit.transform;
+        }
+        // foreach (Collider2D hit in hits)
+        //     if (hit.gameObject.layer == LayerMask.GetMask("Player"))
+        //         return hit.transform;
+        return null;
+    }
+
+    private Transform CheckHit(RaycastHit2D hit)
+    {
+        if (hit.transform != null)
+            if (hit.transform.gameObject.GetComponent<Player>() != null)
+                return hit.transform;
+        return null;
+    }
+
     protected void OnDrawGizmos()
     {
         // Guard sentence
@@ -71,37 +113,15 @@ public class Targeting : MonoBehaviour
             Gizmos.DrawLine(transform.position + new Vector3(0, 0.5f, 0),
                 transform.position + new Vector3(-attack.attackRange, 0.5f, 0));
         }
-    }
 
-    private bool TargetingAction()
-    {
         if (bossEnemy)
         {
-            var hitObjects = Physics2D.OverlapAreaAll(bossZoneCornerA, bossZoneCornerB, targetingLayerMask);
-            target = CheckHit(hitObjects);
-            return target != null;
+            Gizmos.DrawLine(new Vector3(bossZoneCornerA.x, bossZoneCornerA.y, 0), new Vector3(bossZoneCornerB.x, bossZoneCornerB.y, 0));
+            Gizmos.DrawLine(new Vector3(bossZoneCornerA.x, bossZoneCornerB.y, 0), new Vector3(bossZoneCornerB.x, bossZoneCornerA.y, 0));
+            Gizmos.DrawLine(new Vector3(bossZoneCornerA.x, bossZoneCornerA.y, 0), new Vector3(bossZoneCornerB.x, bossZoneCornerA.y, 0));
+            Gizmos.DrawLine(new Vector3(bossZoneCornerA.x, bossZoneCornerB.y, 0), new Vector3(bossZoneCornerB.x, bossZoneCornerB.y, 0));
+            Gizmos.DrawLine(new Vector3(bossZoneCornerA.x, bossZoneCornerA.y, 0), new Vector3(bossZoneCornerA.x, bossZoneCornerB.y, 0));
+            Gizmos.DrawLine(new Vector3(bossZoneCornerB.x, bossZoneCornerA.y, 0), new Vector3(bossZoneCornerB.x, bossZoneCornerB.y, 0));
         }
-
-        RaycastHit2D hitObject =
-            Physics2D.Raycast(transform.position + new Vector3(targetingCenter.x, targetingCenter.y, 0),
-                controller.movingRight ? Vector2.right : Vector2.left, lookingRange, targetingLayerMask);
-        target = CheckHit(hitObject);
-        return target != null;
-    }
-
-    private Transform CheckHit(Collider2D[] hits)
-    {
-        foreach (Collider2D hit in hits)
-            if (hit.gameObject.layer == LayerMask.GetMask("Player"))
-                return hit.transform;
-        return null;
-    }
-
-    private Transform CheckHit(RaycastHit2D hit)
-    {
-        if (hit.transform != null)
-            if (hit.transform.gameObject.GetComponent<Player>() != null)
-                return hit.transform;
-        return null;
     }
 }
