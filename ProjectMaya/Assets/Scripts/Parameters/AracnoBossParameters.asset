@@ -27,13 +27,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   wallCheckerCenter: {x: 0, y: 0}
-  wallCheckerDistance: 1
+  wallCheckerDistance: 4
   wallCheckerLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   targetingLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   targetingCenter: {x: 0, y: 0}
-  bossZoneCornerA: {x: 0, y: 0}
-  bossZoneCornerB: {x: 0, y: 0}
+  bossZoneCornerA: {x: -15, y: 5}
+  bossZoneCornerB: {x: 15, y: -20}

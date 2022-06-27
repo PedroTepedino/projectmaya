@@ -16,8 +16,8 @@ TagManager:
   - Enemy
   - Ground
   - Weapons
-  - Projectile
-  - 
+  - ProjectilePlayer
+  - ProjectileEnemies
   - 
   - 
   - 
