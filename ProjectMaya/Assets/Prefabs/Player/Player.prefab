@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 3659154489680133296}
   - component: {fileID: 3659154489680133295}
   - component: {fileID: 3659154489680133292}
-  - component: {fileID: 1983464071}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -166,33 +165,6 @@ MonoBehaviour:
   playerSprite: {fileID: 3659154490040190635}
   playerController: {fileID: 0}
   playerWeaponSystem: {fileID: 0}
---- !u!114 &1983464071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3659154489680133293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d7b73744513b4e4f9fc1b66adfae2e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerIdleSoundEvent:
-    Guid:
-      Data1: 1701807797
-      Data2: 1286823523
-      Data3: 2059088310
-      Data4: -985469547
-    Path: event:/Player/Player Hover Idle
-  PlayerMoveSoundEvent:
-    Guid:
-      Data1: -262539066
-      Data2: 1128928160
-      Data3: 1245037482
-      Data4: 1793922238
-    Path: event:/Player/Player Hover Moving
-  rb: {fileID: 3659154489680133298}
 --- !u!1 &3659154489819657139
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,8 +260,6 @@ GameObject:
   - component: {fileID: 3659154490040190633}
   - component: {fileID: 3659154490040190635}
   - component: {fileID: 3659154490040190632}
-  - component: {fileID: 2018992475730433832}
-  - component: {fileID: 1402777168}
   m_Layer: 0
   m_Name: MayaMesh
   m_TagString: Untagged
@@ -384,51 +354,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2018992475730433832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3659154490040190630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e38e4a65e77e0674197999e905da1c5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerAnimator: {fileID: 0}
-  playerInput: {fileID: 0}
-  playerRigidbody: {fileID: 0}
-  playerLifeSystem: {fileID: 0}
-  playerSprite: {fileID: 0}
-  playerController: {fileID: 0}
-  playerWeaponSystem: {fileID: 0}
---- !u!114 &1402777168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3659154490040190630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 858ac1d55a6808d40a0e6195c3e4cc39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerDashSound:
-    Guid:
-      Data1: -353375191
-      Data2: 1222608560
-      Data3: -745383792
-      Data4: -495877230
-    Path: event:/Player/Player Dash
-  PlayerHitSound:
-    Guid:
-      Data1: -361377077
-      Data2: 1086091545
-      Data3: 387852675
-      Data4: -557816035
-    Path: event:/Player/Player Damage
 --- !u!1 &3659154490102548879
 GameObject:
   m_ObjectHideFlags: 0
