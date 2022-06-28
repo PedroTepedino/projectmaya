@@ -35,5 +35,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   targetingCenter: {x: 0, y: 0}
-  bossZoneCornerA: {x: -15, y: 5}
-  bossZoneCornerB: {x: 15, y: -20}
+  bossZoneCornerA: {x: -28, y: 19}
+  bossZoneCornerB: {x: 27, y: -10}

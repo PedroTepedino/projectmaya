@@ -62,7 +62,10 @@ public class Targeting : MonoBehaviour
             //     target = CheckHit(hitObjectBoss);
             // }
             // return target != null;
-            target = FindObjectOfType<Player>().gameObject.transform;
+            if (GameManager.isBossStarted)
+            {
+                target = FindObjectOfType<Player>().gameObject.transform;
+            }
             return target != null;
         }
 

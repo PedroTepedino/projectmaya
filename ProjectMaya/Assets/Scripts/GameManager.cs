@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string menuSceneName;
     
     private bool isGamePaused = false;
+    
+    [HideInInspector] public static bool isBossStarted = false;
 
     private void Awake() 
     {
