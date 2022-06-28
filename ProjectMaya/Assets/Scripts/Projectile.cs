@@ -61,4 +61,14 @@ public abstract class Projectile : MonoBehaviour
         Destroy();
     }
 
+    public virtual void OnTriggerEnter2D(Collider2D other) 
+    {
+        var collidedGameObject = other.gameObject;
+        if (collidedGameObject.CompareTag(tagToHit))
+        {
+            collidedGameObject.GetComponent<LifeSystem>().Damage(damage);
+        }
+        Destroy();
+    }
+
 }

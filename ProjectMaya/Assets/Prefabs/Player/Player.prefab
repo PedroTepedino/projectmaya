@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 3659154489680133295}
   - component: {fileID: 3659154489680133292}
   - component: {fileID: 398327250}
+  - component: {fileID: 1682943143}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -192,7 +193,31 @@ MonoBehaviour:
       Data3: 1245037482
       Data4: 1793922238
     Path: event:/Player/Player Hover Moving
+  PlayerDeathSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   rb: {fileID: 3659154489680133298}
+  ls: {fileID: 0}
+--- !u!58 &1682943143
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3659154489680133293}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.01}
+  serializedVersion: 2
+  m_Radius: 0.79
 --- !u!1 &3659154489819657139
 GameObject:
   m_ObjectHideFlags: 0
