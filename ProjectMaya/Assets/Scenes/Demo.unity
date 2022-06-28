@@ -201,7 +201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13956595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: -29.4, z: -10}
+  m_LocalPosition: {x: 0.6, y: -1.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -251,7 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 49987830}
   - component: {fileID: 49987831}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: COLLIDERS_Tiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 212840217}
   - component: {fileID: 212840219}
   - component: {fileID: 212840218}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundTiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35658,7 +35658,7 @@ GameObject:
   - component: {fileID: 255973992}
   - component: {fileID: 255973994}
   - component: {fileID: 255973993}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FloorTiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39482,7 +39482,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 380334526}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TilemapS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39638,10 +39638,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3659154490040190635, guid: 2d0f3610d9ebf774ca109f9bc1533671, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d0f3610d9ebf774ca109f9bc1533671, type: 3}
 --- !u!1 &613254508 stripped
@@ -39661,7 +39657,7 @@ GameObject:
   - component: {fileID: 623152939}
   - component: {fileID: 623152938}
   - component: {fileID: 623152937}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GrillNObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42321,6 +42317,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3996395462905241769, guid: a56bba2e26138234e99bd1f51ce6da53, type: 3}
   m_PrefabInstance: {fileID: 3996395461779331336}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1227750020 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5792791930297634251, guid: 6c6a6051b3c9730458797d2bfafa7f59, type: 3}
+  m_PrefabInstance: {fileID: 1607529559}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62c71a4f4d5eb134392ab8aeb4fb0ff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1260752350
 GameObject:
   m_ObjectHideFlags: 0
@@ -42332,7 +42339,7 @@ GameObject:
   - component: {fileID: 1260752351}
   - component: {fileID: 1260752353}
   - component: {fileID: 1260752352}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DirtTiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43399,7 +43406,7 @@ GameObject:
   - component: {fileID: 1326544439}
   - component: {fileID: 1326544438}
   - component: {fileID: 1326544437}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Base_WallTiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49375,7 +49382,7 @@ GameObject:
   - component: {fileID: 1459622414}
   - component: {fileID: 1459622416}
   - component: {fileID: 1459622415}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CanalTiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50944,7 +50951,7 @@ GameObject:
   - component: {fileID: 1541950995}
   - component: {fileID: 1541950997}
   - component: {fileID: 1541950996}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShadowITiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51152,7 +51159,7 @@ GameObject:
   - component: {fileID: 1547779531}
   - component: {fileID: 1547779533}
   - component: {fileID: 1547779532}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GrillForeTiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53699,6 +53706,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1607529559
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5792791930297634249, guid: 6c6a6051b3c9730458797d2bfafa7f59, type: 3}
+      propertyPath: m_Name
+      value: SceneTransitionManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792791930297634250, guid: 6c6a6051b3c9730458797d2bfafa7f59, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792791930297634250, guid: 6c6a6051b3c9730458797d2bfafa7f59, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 450.27423
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792791930297634250, guid: 6c6a6051b3c9730458797d2bfafa7f59, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 224.64047
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792791930297634250, guid: 6c6a6051b3c9730458797d2bfafa7f59, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.73619276
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792791930297634250, guid: 6c6a6051b3c9730458797d2bfafa7f59, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792791930297634250, guid: 6c6a6051b3c9730458797d2bfafa7f59, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792791930297634250, guid: 6c6a6051b3c9730458797d2bfafa7f59, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792791930297634250, guid: 6c6a6051b3c9730458797d2bfafa7f59, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792791930297634250, guid: 6c6a6051b3c9730458797d2bfafa7f59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792791930297634250, guid: 6c6a6051b3c9730458797d2bfafa7f59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792791930297634250, guid: 6c6a6051b3c9730458797d2bfafa7f59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6c6a6051b3c9730458797d2bfafa7f59, type: 3}
 --- !u!1001 &1792345530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53835,7 +53899,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1795393583}
   - component: {fileID: 1795393584}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BACK_Ground_Tiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53885,7 +53949,7 @@ GameObject:
   - component: {fileID: 1836094062}
   - component: {fileID: 1836094064}
   - component: {fileID: 1836094063}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WallForeTiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62792,7 +62856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1914553488}
   - component: {fileID: 1914553489}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FORE_Ground_Tiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62985,6 +63049,10 @@ PrefabInstance:
     - target: {fileID: 7561198805205918358, guid: ca6d035d8f209cf4085c087be28228da, type: 3}
       propertyPath: m_Name
       value: AracnoBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561198805205918367, guid: ca6d035d8f209cf4085c087be28228da, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca6d035d8f209cf4085c087be28228da, type: 3}
@@ -63440,6 +63508,10 @@ PrefabInstance:
       propertyPath: playerInput
       value: 
       objectReference: {fileID: 1525012887}
+    - target: {fileID: 5590675014441068922, guid: ffb98fb26794fc840a439dfaed4bfdc5, type: 3}
+      propertyPath: sceneManager
+      value: 
+      objectReference: {fileID: 1227750020}
     - target: {fileID: 5590675014441068923, guid: ffb98fb26794fc840a439dfaed4bfdc5, type: 3}
       propertyPath: m_RootOrder
       value: 5
