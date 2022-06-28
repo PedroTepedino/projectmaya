@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class BossRocketLauncher : WeaponBase
 {
+    protected override void Update() 
+    {
+        base.Update();
+
+        if (magazineRemaning <= 0 && !recharging)
+        {
+            Reload();
+        }
+    }
+
     public override void Shoot()
     {
         if (timerToShoot < 0 && magazineRemaning > 0)
         {
             var projectile = pool.Get();
-            projectile.direction = this.transform.forward;
+            projectile.direction = Vector2.down;
             magazineRemaning--;
         }
     }    

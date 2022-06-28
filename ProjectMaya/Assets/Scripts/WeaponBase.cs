@@ -20,6 +20,7 @@ public abstract class WeaponBase : MonoBehaviour
     [HideInInspector] public Vector2 aimDirection;
 
     protected float timerToShoot = 0;
+    protected bool recharging = false;
 
     protected void Awake() 
     {
@@ -40,7 +41,7 @@ public abstract class WeaponBase : MonoBehaviour
         magazineRemaning = magazineSize;
     }
 
-    private void Update() {
+    protected virtual void Update() {
         timerToShoot -= Time.deltaTime;
     }
 
@@ -76,9 +77,11 @@ public abstract class WeaponBase : MonoBehaviour
 
     private IEnumerator ReloadTimer()
     {
+        recharging = true;
         yield return new WaitForSeconds(reloadTime);
 
         magazineRemaning = magazineSize;
+        recharging = false;
     }
 
 

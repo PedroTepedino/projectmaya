@@ -70,9 +70,10 @@ public class Attack : MonoBehaviour
 
         for (int i = 0; i < availableAttacks.Length; i++)
         {
-            if ((selectedWeapon.WeaponPriority < availableAttacks[i].WeaponPriority) && (availableAttacks[i].magazineRemaning > 0))
+            if (/*(selectedWeapon.WeaponPriority < availableAttacks[i].WeaponPriority) &&*/ (availableAttacks[i].magazineRemaning > 0))
             {
                 selectedWeapon = availableAttacks[i];
+                Debug.Log(selectedWeapon.gameObject);
             }
         }
 
