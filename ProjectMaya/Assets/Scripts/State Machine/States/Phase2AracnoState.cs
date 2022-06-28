@@ -41,7 +41,7 @@ public class Phase2AracnoState : IState
         if (!wallCheck.wallAhead)
             Move();
         else
-            ownerController.movingRight = ownerController.movingRight ? false : true;
+            ownerController.movingRight = !ownerController.movingRight;
 
         attack.SelectAttack();
     }

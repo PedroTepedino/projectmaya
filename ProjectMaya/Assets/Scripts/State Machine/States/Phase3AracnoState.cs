@@ -25,8 +25,10 @@ public class Phase3AracnoState : IState
         wallCheck = ownerGameObject.GetComponent<WallChecker>();
         attack = ownerGameObject.GetComponent<Attack>();
         movingSpeed = ownerController.EnemyParameters.MovingSpeed * acceleration;
-        centralPoint = new Vector3(((ownerController.EnemyParameters.BossZoneCornerA.x + ownerController.EnemyParameters.BossZoneCornerB.x)/2), ((ownerController.EnemyParameters.BossZoneCornerA.y + ownerController.EnemyParameters.BossZoneCornerB.y)/2), 0);
-        maxDistanceFromCenter = Vector3.Distance(centralPoint, ownerController.EnemyParameters.BossZoneCornerA)*0.75f;
+        centralPoint = new Vector3(((ownerController.EnemyParameters.BossZoneCornerA.x + ownerController.EnemyParameters.BossZoneCornerB.x)/2), 
+                                   ((ownerController.EnemyParameters.BossZoneCornerA.y + ownerController.EnemyParameters.BossZoneCornerB.y)/2),
+                                   0);
+        maxDistanceFromCenter = Vector3.Distance(centralPoint, new Vector3(centralPoint.x,ownerController.EnemyParameters.BossZoneCornerA.y,0))*0.75f;
     }
 
     public void OnEnter()
@@ -52,7 +54,6 @@ public class Phase3AracnoState : IState
         {
             InitialMovement();
         }
-
         attack.SelectAttack();
     }
 
@@ -60,25 +61,30 @@ public class Phase3AracnoState : IState
     {
         Vector3 direction = centralPoint - ownerGameObject.transform.position;
         direction = Quaternion.Euler(0, 0, (ownerController.movingRight ? spiralAngle : spiralAngle+90f )) * direction;
-        ownerGameObject.transform.Translate(direction.normalized * movingSpeed * Time.deltaTime, Space.World);
+        ownerRigidbody.velocity = direction.normalized * movingSpeed;
 
-        if (Vector3.Distance(centralPoint, ownerGameObject.transform.position) < 0.1f)
+        if (Vector3.Distance(centralPoint, ownerGameObject.transform.position) < 0.2f)
         {
             ownerController.movingRight = false;
+            Debug.Log(ownerController.movingRight);
         }
 
         if (Vector3.Distance(centralPoint, ownerGameObject.transform.position) > maxDistanceFromCenter)
         {
             ownerController.movingRight = true;
+            Debug.Log(ownerController.movingRight);
         }
     }
 
     private void InitialMovement()
     {
-        Vector3 direction = centralPoint - ownerGameObject.transform.position;
-        ownerGameObject.transform.Translate(direction.normalized * movingSpeed * Time.deltaTime, Space.World);
+        var direction = centralPoint - ownerGameObject.transform.position;
+        ownerRigidbody.velocity = direction.normalized * movingSpeed;
 
-        spiralStarted = (Vector3.Distance(centralPoint, ownerGameObject.transform.position) < 0.1f);
+        if (Vector3.Distance(centralPoint, ownerGameObject.transform.position) < 0.1f)
+        {
+            spiralStarted = true;
+        }
         ownerController.movingRight = false;
     }
 
