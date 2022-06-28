@@ -1,21 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
 
 public class PlayerAudioController : MonoBehaviour
 { 
     public FMODUnity.EventReference PlayerIdleSoundEvent;
     public FMODUnity.EventReference PlayerMoveSoundEvent;
+    public EventReference PlayerDeathSound;
 
     FMOD.Studio.EventInstance PlayerIdleSound;
     FMOD.Studio.EventInstance PlayerMoveSound;
 
+
     public Rigidbody2D rb;
+
+    public LifeSystem ls;
+
+    private void Awake()
+    {
+        ls = this.GetComponent<LifeSystem>();
+    }
 
     void Start()
     {
         PlayerIdleSound = FMODUnity.RuntimeManager.CreateInstance(PlayerIdleSoundEvent);
         PlayerMoveSound = FMODUnity.RuntimeManager.CreateInstance(PlayerMoveSoundEvent);
+    }
+
+    private void OnEnable()
+    {
+        ls.OnDie += PlayDeath;
+    }
+
+    private void OnDisable()
+    {
+        ls.OnDie -= PlayDeath;
     }
 
     void Update()
@@ -39,5 +58,10 @@ public class PlayerAudioController : MonoBehaviour
         FMOD.Studio.PLAYBACK_STATE state;
         instance.getPlaybackState(out state);
         return state != FMOD.Studio.PLAYBACK_STATE.STOPPED;
+    }
+
+    void PlayDeath()
+    {
+        RuntimeManager.PlayOneShot(PlayerDeathSound, transform.position);
     }
 }

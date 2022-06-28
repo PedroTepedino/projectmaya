@@ -576,6 +576,7 @@ GameObject:
   - component: {fileID: 7561198805714470498}
   - component: {fileID: 7561198805714470496}
   - component: {fileID: 7561198805714470497}
+  - component: {fileID: 1714166113}
   m_Layer: 0
   m_Name: BossLegs
   m_TagString: Untagged
@@ -670,6 +671,39 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1714166113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7561198805714470499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ba1d47830882149a2829405f82afae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BossIdleSound:
+    Guid:
+      Data1: -1782726772
+      Data2: 1089932778
+      Data3: 564054407
+      Data4: 1509151810
+    Path: event:/Boss/Idle
+  BossWalkSound:
+    Guid:
+      Data1: 1670285929
+      Data2: 1332232257
+      Data3: 994258077
+      Data4: 115623720
+    Path: event:/Boss/Walking
+  BossHoverSound:
+    Guid:
+      Data1: -2027349662
+      Data2: 1184776110
+      Data3: 1702890150
+      Data4: 684702797
+    Path: event:/Boss/Hover
 --- !u!1 &7561198806260476943
 GameObject:
   m_ObjectHideFlags: 0

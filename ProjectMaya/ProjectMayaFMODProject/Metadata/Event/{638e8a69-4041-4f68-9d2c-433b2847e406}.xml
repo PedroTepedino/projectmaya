@@ -124,8 +124,14 @@
 		</relationship>
 	</object>
 	<object class="MultiSound" id="{3381a257-2593-484d-b18b-7711bd3bafaf}">
+		<property name="triggerConditionMode">
+			<value>1</value>
+		</property>
 		<property name="length">
 			<value>0.60000000000000009</value>
+		</property>
+		<property name="maxVoices">
+			<value>1</value>
 		</property>
 		<relationship name="sounds">
 			<destination>{ee27eda5-1f2e-4f3d-9033-c2bcc38e83d5}</destination>
