@@ -54,7 +54,7 @@
 			<destination>{6684a712-1ebd-4819-b96c-b854c14e41d0}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{ea24a93b-781f-44b3-a512-fc169e58aa36}</destination>
+			<destination>{e781f35c-cc51-4447-835e-cf48eddf419e}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{4cf6a7f1-f81f-4c1a-a14b-ad26d1770911}" />
@@ -85,6 +85,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{f1cd6039-c4cf-4b61-8d46-ee058e83d82c}">
+		<property name="volume">
+			<value>-2</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{1099ba63-da3c-41d1-be68-af536e8df7c4}</destination>
 		</relationship>
@@ -124,21 +127,22 @@
 		</relationship>
 	</object>
 	<object class="MultiSound" id="{3381a257-2593-484d-b18b-7711bd3bafaf}">
-		<property name="triggerConditionMode">
-			<value>1</value>
-		</property>
 		<property name="length">
 			<value>0.60000000000000009</value>
 		</property>
-		<property name="maxVoices">
+		<property name="playlistMode">
 			<value>1</value>
 		</property>
 		<relationship name="sounds">
 			<destination>{ee27eda5-1f2e-4f3d-9033-c2bcc38e83d5}</destination>
 			<destination>{087c5317-7089-4861-8164-0042edd2a3c2}</destination>
+			<destination>{6ac15a85-c903-4b13-a3a2-7e2b13e1130b}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{db3eab09-72d7-4277-9118-44768811aead}">
+		<property name="volume">
+			<value>-7</value>
+		</property>
 		<property name="name">
 			<value>Audio 2</value>
 		</property>
@@ -195,6 +199,7 @@
 			<destination>{d64aea06-2ec7-4cf1-a12c-70ef08ec4de5}</destination>
 		</relationship>
 	</object>
+	<object class="SilenceSound" id="{6ac15a85-c903-4b13-a3a2-7e2b13e1130b}" />
 	<object class="MixerBusEffectChain" id="{f979f93d-32ae-4f9c-bd13-8f4cfde245d8}">
 		<relationship name="effects">
 			<destination>{16323faf-6504-4e13-80c3-34d504cae923}</destination>

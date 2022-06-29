@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 637919664295086143
+  lastModified: 637920619505189578
   FileSizes: []
   Exists: 1
 --- !u!114 &-7008994142415523763
@@ -72,6 +72,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 211200
+--- !u!114 &-5795435143371359667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Boss/Explosion
+  m_EditorClassIdentifier: 
+  Path: event:/Boss/Explosion
+  Guid:
+    Data1: 253492171
+    Data2: 1143261900
+    Data3: -2011806279
+    Data4: 1297293837
+  Banks:
+  - {fileID: 7469585915214471052}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4233212615185941233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Boss/Boss Hit
+  m_EditorClassIdentifier: 
+  Path: event:/Boss/Boss Hit
+  Guid:
+    Data1: -1970154678
+    Data2: 1120421810
+    Data3: 1833583036
+    Data4: -2068911110
+  Banks:
+  - {fileID: 7469585915214471052}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3972372859729846274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,10 +195,10 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637919664294075963
+  lastModified: 637920619504239417
   FileSizes:
   - Name: 
-    Value: 1734
+    Value: 1828
   Exists: 1
 --- !u!114 &-1660293707435805272
 MonoBehaviour:
@@ -233,12 +287,14 @@ MonoBehaviour:
   - {fileID: -3972372859729846274}
   - {fileID: 289549054948284263}
   - {fileID: 515221777806264069}
+  - {fileID: -4233212615185941233}
+  - {fileID: -5795435143371359667}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2287336632285706948}
   StringsBanks:
   - {fileID: -3266379407884158868}
-  cacheTime: 637919664295086143
+  cacheTime: 637920619505189578
   cacheVersion: 10
 --- !u!114 &289549054948284263
 MonoBehaviour:
@@ -336,7 +392,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637919664294050958
+  lastModified: 637920619504214402
   FileSizes: []
   Exists: 1
 --- !u!114 &2620629117227427491
@@ -381,7 +437,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637919664294866105
+  lastModified: 637920619504949528
   FileSizes: []
   Exists: 1
 --- !u!114 &6400341754612155374
@@ -480,7 +536,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Boss.bank
   Name: Boss
   StudioPath: bank:/Boss
-  lastModified: 637919664293835926
+  lastModified: 637920619503999366
   FileSizes: []
   Exists: 1
 --- !u!114 &8783947743979236082
