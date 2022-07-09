@@ -27,7 +27,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   wallCheckerCenter: {x: 0, y: 0}
-  wallCheckerDistance: 4
+  wallCheckerDistance: 6.5
   wallCheckerLayerMask:
     serializedVersion: 2
     m_Bits: 128

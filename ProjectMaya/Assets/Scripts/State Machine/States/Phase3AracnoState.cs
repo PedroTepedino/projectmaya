@@ -28,7 +28,7 @@ public class Phase3AracnoState : IState
         centralPoint = new Vector3(((ownerController.EnemyParameters.BossZoneCornerA.x + ownerController.EnemyParameters.BossZoneCornerB.x)/2), 
                                    ((ownerController.EnemyParameters.BossZoneCornerA.y + ownerController.EnemyParameters.BossZoneCornerB.y)/2),
                                    0);
-        maxDistanceFromCenter = Vector3.Distance(centralPoint, new Vector3(centralPoint.x,ownerController.EnemyParameters.BossZoneCornerA.y,0))*0.75f;
+        maxDistanceFromCenter = Vector3.Distance(centralPoint, new Vector3(centralPoint.x,ownerController.EnemyParameters.BossZoneCornerA.y,0))*0.5f;
     }
 
     public void OnEnter()
