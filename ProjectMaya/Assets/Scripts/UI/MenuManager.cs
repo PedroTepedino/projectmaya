@@ -17,7 +17,6 @@ public class MenuManager : MonoBehaviour
                 {
                     GameObject managerMenuObject = new GameObject("MenuManager", typeof(MenuManager));
                     instance = managerMenuObject.GetComponent<MenuManager>();
-                    DontDestroyOnLoad(managerMenuObject);
                 }
             }
             return instance;
@@ -37,7 +36,6 @@ public class MenuManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
         }
         else if (instance == this)
         {
