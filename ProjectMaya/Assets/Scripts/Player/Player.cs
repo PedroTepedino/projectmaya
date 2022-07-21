@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     private PlayerParameters _playerParameters;
 
     private Rigidbody2D _Rigidbody2D;
+    private WeaponSystem weaponSystem;
 
     private Mover _mover;
 
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour
     {
         _Rigidbody2D = this.GetComponent<Rigidbody2D>();
         _playerInput = this.GetComponent<PlayerInput>();
+        weaponSystem = this.GetComponentInChildren<WeaponSystem>();
 
         _mover = GetMover<ForceMover>();
     }
@@ -132,7 +134,7 @@ public class Player : MonoBehaviour
         {
             ForceMover => new ForceMover(_playerInput.actions["Move"], _Rigidbody2D, _playerParameters),
             Charging => new Charging(_Rigidbody2D, _playerParameters),
-            Dashing => new Dashing(_playerInput.actions["Move"], _Rigidbody2D, _playerParameters),
+            Dashing => new Dashing(_playerInput.actions["Move"], weaponSystem.aimDirection, _Rigidbody2D, _playerParameters),
             Recovering => new Recovering(_Rigidbody2D, _playerParameters),       
             _ => null
         };

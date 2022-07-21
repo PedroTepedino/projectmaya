@@ -121,16 +121,16 @@ public class Dashing : Mover
 
     public Dashing() { }
     
-    public Dashing(InputAction moveAction, Rigidbody2D Rigidbody2D, PlayerParameters playerParameters) 
+    public Dashing(InputAction moveAction, Vector2 aimDirection, Rigidbody2D Rigidbody2D, PlayerParameters playerParameters) 
         : base(Rigidbody2D, playerParameters)
     {
         var transform = _Rigidbody2D.transform;
         var input = moveAction.ReadValue<Vector2>();
         
         _initialPosition = transform.position;
-        if (input == Vector2.zero)
+        if (input.magnitude < 0.1f)
         {
-            _endPosition = _initialPosition + (transform.forward * _playerParameters.DashDistance);
+            _endPosition = _initialPosition + (new Vector3(aimDirection.normalized.x, aimDirection.normalized.y, 0) * _playerParameters.DashDistance);
         }else
         {
             _endPosition = _initialPosition + (new Vector3(input.x, input.y, 0) * _playerParameters.DashDistance);
