@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -7,74 +9,41 @@ using UnityEngine.UI;
 public class LifeBarController : MonoBehaviour
 {
     [SerializeField]
-    private LifeSystem _lifeSystemToListen;
+    private LifeSystem lifeSystemToListen;
     
     [SerializeField] [BoxGroup("Components")] [Required]
-    private Image _barFillImage;
-
-    [SerializeField] [BoxGroup("Components")] [Required]
-    private Image _barFillDecay;
+    private Slider barFillImage;
 
     [SerializeField] [BoxGroup("Components")]
-    private DOTweenAnimation _shakeAnimation;
+    private Slider barFillDecay;
 
-    [SerializeField] [BoxGroup("Decay")] private float _decaySpeed = 0.5f;
-    [SerializeField] [BoxGroup("Decay")] private float _decayDelay = 0.75f;
+    [SerializeField] [BoxGroup("Decay")] private float decaySpeed = 0.5f;
+    [SerializeField] [BoxGroup("Decay")] private float decayDelay = 0.75f;
 
-    [SerializeField] [BoxGroup("Heal Decay")]
-    private float _healDecaySpeed = 1f;
+    private float curentFill = 1f;
+    private Tween decayBarAnimation;
 
-    [SerializeField] [BoxGroup("Heal Decay")]
-    private float _healDecayDelay = 0.2f;
-
-
-    private float _curentFill = 1f;
-    private Tween _decayBarAnimation;
-
-
-    private void ListenDamage(int curentHealth, int maxHealth)
-    {
-        _curentFill = curentHealth / (float)maxHealth;
-        _barFillImage.fillAmount = _curentFill;
-
-        ShakeBar();
-        LifeBarDecay();
+    private void OnEnable() {
+        lifeSystemToListen.OnChangeLife += ListenLifeChange;
     }
 
-    private void ListenHeal(int curentHealth, int maxHealth)
-    {
-        _curentFill = curentHealth / (float)maxHealth;
-        _barFillDecay.fillAmount = _curentFill;
-
-        LifeBarHealDecay();
+    private void OnDisable() {
+        lifeSystemToListen.OnChangeLife -= ListenLifeChange;
     }
 
-    private void ShakeBar()
+    private void ListenLifeChange()
     {
-        _shakeAnimation?.DORestart();
+        curentFill = lifeSystemToListen._currentLife;
+
+        StartCoroutine(LifeBarChange());
     }
 
-    private void LifeBarDecay()
+    private IEnumerator LifeBarChange()
     {
-        if (_decayBarAnimation != null)
-        {
-            _decayBarAnimation.Kill();
-        }
+        barFillImage.value = curentFill;
 
-        _decayBarAnimation = DOTween.To(() => _barFillDecay.fillAmount, x => _barFillDecay.fillAmount = x,
-                _curentFill, _decaySpeed)
-            .SetDelay(_decayDelay).SetAutoKill(false).SetSpeedBased(true).SetEase(Ease.Linear);
-    }
+        yield return new WaitForSeconds(decayDelay);
 
-    private void LifeBarHealDecay()
-    {
-        if (_decayBarAnimation != null)
-        {
-            _decayBarAnimation.Kill();
-        }
-
-        _decayBarAnimation = DOTween.To(() => _barFillImage.fillAmount, x => _barFillImage.fillAmount = x,
-                _curentFill, _healDecaySpeed)
-            .SetDelay(_healDecayDelay).SetAutoKill(false).SetSpeedBased(true).SetEase(Ease.Linear);
+        barFillDecay.value = curentFill;
     }
 }
