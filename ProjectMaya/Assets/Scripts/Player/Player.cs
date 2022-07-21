@@ -14,8 +14,10 @@ public class Player : MonoBehaviour
     private WeaponSystem weaponSystem;
 
     private Mover _mover;
-
     public Mover Mover => _mover; // TODO : remove when not necessary
+
+    private Vector2 lastDirection;
+    public Vector2 LastDirection => lastDirection;
 
     private PlayerInput _playerInput;
     private int playerID;
@@ -56,6 +58,10 @@ public class Player : MonoBehaviour
     {
         //if (_mover is not Dashing)
             //_aimSystem.Tick(Time.deltaTime);
+        if (_playerInput.actions["Move"].ReadValue<Vector2>().magnitude > 0.1f)
+        {
+            lastDirection = _playerInput.actions["Move"].ReadValue<Vector2>();
+        }
     }
 
     private void FixedUpdate()
