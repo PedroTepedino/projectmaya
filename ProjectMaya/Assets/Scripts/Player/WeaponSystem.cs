@@ -14,6 +14,7 @@ public class WeaponSystem : MonoBehaviour
     private WeaponBase selectedWeapon;
     private Rigidbody2D weaponRigidbody;
     private int selectedWeaponID;
+    private bool isShooting;
 
     private void Awake() 
     {
@@ -30,7 +31,9 @@ public class WeaponSystem : MonoBehaviour
 
     private void OnEnable() 
     {
+        //playerInput.actions["Shoot"].performed += ListenToShootButton;
         playerInput.actions["Shoot"].started += ListenToShootButton;
+        playerInput.actions["Shoot"].canceled += ListenToShootButton;
         playerInput.actions["Reload"].started += ListenToReloadButton;
         playerInput.actions["SelectWeapon1"].started += ListenToSelectWeapon1Button;
         playerInput.actions["SelectWeapon2"].started += ListenToSelectWeapon2Button;
@@ -43,7 +46,9 @@ public class WeaponSystem : MonoBehaviour
 
     private void OnDisable() 
     {
+        //playerInput.actions["Shoot"].performed -= ListenToShootButton;
         playerInput.actions["Shoot"].started -= ListenToShootButton;
+        playerInput.actions["Shoot"].canceled -= ListenToShootButton;
         playerInput.actions["Reload"].started -= ListenToReloadButton;
         playerInput.actions["SelectWeapon1"].started -= ListenToSelectWeapon1Button;
         playerInput.actions["SelectWeapon2"].started -= ListenToSelectWeapon2Button;
@@ -68,11 +73,25 @@ public class WeaponSystem : MonoBehaviour
         weaponRigidbody.MoveRotation(angle);
 
         selectedWeapon.aimDirection = aimDirection;
+
+        if (isShooting)
+        {
+            selectedWeapon.Shoot();
+        }
     }
 
     private void ListenToShootButton(InputAction.CallbackContext context)
     {
-        selectedWeapon.Shoot();
+        //selectedWeapon.Shoot();
+        if (context.started)
+        {
+            isShooting = true;
+        }
+
+        if (context.canceled)
+        {
+            isShooting = false;
+        }
     }
 
     private void ListenToReloadButton(InputAction.CallbackContext context)
