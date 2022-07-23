@@ -52,7 +52,7 @@ public class PlayerAnimatorController : MonoBehaviour
 
    private void GetInputDirection()
    {
-        var input = playerInput.actions["Move"].ReadValue<Vector2>();
+        var input = playerController.LastDirection;
         
         playerAnimator.SetFloat("inputX", input.x);
         playerAnimator.SetFloat("inputY", input.y);
@@ -99,7 +99,7 @@ public class PlayerAnimatorController : MonoBehaviour
 
     private void FlipSprite()
     {
-        playerSprite.flipX = (playerInput.actions["Move"].ReadValue<Vector2>().x < 0);
+        playerSprite.flipX = (playerController.LastDirection.x < 0);
         // if (playerInput.actions["Move"].ReadValue<Vector2>().x < 0)
         // {
         //     //transform.localScale = new Vector2(-1f, 1f);

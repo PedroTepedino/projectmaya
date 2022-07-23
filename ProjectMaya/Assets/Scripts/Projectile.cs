@@ -15,10 +15,13 @@ public abstract class Projectile : MonoBehaviour
     [HideInInspector] public Vector2 direction;
 
     private IObjectPool<Projectile> pool;
+    private SpriteRenderer projectileSprite;
 
     public void SetPool(IObjectPool<Projectile> toSetPool) => pool = toSetPool;
 
-
+    private void Awake() {
+        projectileSprite = this.GetComponentInChildren<SpriteRenderer>();
+    }
     
     protected void OnEnable() 
     {
@@ -37,10 +40,20 @@ public abstract class Projectile : MonoBehaviour
 
     protected void Destroy()
     {
+        StartCoroutine(Destroying());
+    }
+
+    protected IEnumerator Destroying()
+    {
         if (destroyParticle != null)
         {
             destroyParticle.Play();
         }
+        projectileSprite.enabled = false;
+
+        yield return new WaitForSeconds(destroyParticle.main.duration);
+
+        projectileSprite.enabled = true;
         pool.Release(this);
     }
 

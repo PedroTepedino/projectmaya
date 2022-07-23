@@ -260,6 +260,17 @@
                 },
                 {
                     "name": "",
+                    "id": "09a37ce9-9190-46f1-b378-f27470006eab",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "559fa64a-5046-4f15-bc47-7e3f783d57c5",
                     "path": "<Keyboard>/r",
                     "interactions": "",
@@ -273,6 +284,17 @@
                     "name": "",
                     "id": "d2c0b31a-8cf5-41e0-aca8-5bd245a132b6",
                     "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bc4392b8-6a17-4e89-a473-765a3aeaae82",
+                    "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
