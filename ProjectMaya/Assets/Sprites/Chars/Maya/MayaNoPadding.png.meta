@@ -3904,6 +3904,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: MayaNoPadding_181
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f869c655348697f4a8d2bf9baa09d61d
+      internalID: 1849184040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -3939,6 +3960,7 @@ TextureImporter:
       MayaNoPadding_150: 948135485
       MayaNoPadding_165: 831340779
       MayaNoPadding_66: 904159127
+      MayaNoPadding_181: 1849184040
       MayaNoPadding_29: 555302487
       MayaNoPadding_158: 32373505
       MayaNoPadding_147: -892332155
