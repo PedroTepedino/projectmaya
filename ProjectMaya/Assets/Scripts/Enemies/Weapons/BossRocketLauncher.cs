@@ -18,6 +18,7 @@ public class BossRocketLauncher : WeaponBase
     {
         if (timerToShoot < 0 && magazineRemaning > 0)
         {
+            shootingParticle.Play();
             var projectile = pool.Get();
             projectile.direction = Vector2.down;
             magazineRemaning--;

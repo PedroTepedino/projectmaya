@@ -12,6 +12,7 @@ public abstract class WeaponBase : MonoBehaviour
     [SerializeField] protected float reloadTime;
     [SerializeField] protected float shootingSpeed;
     [SerializeField] protected Projectile projectilePrefab;
+    [SerializeField] protected ParticleSystem shootingParticle;
     [SerializeField] protected Transform spawnPosition;
     [SerializeField] protected int startingPoolSize = 20;
     [SerializeField] protected int maxPoolSize = 100;
