@@ -8,11 +8,11 @@ public class PlayerAnimationAudioController : MonoBehaviour
     public FMODUnity.EventReference PlayerHitSound;
     void PlayDashSound()
     {
-        FMODUnity.RuntimeManager.PlayOneShot(PlayerDashSound, transform.position);
+        FMODUnity.RuntimeManager.PlayOneShot(PlayerDashSound);
     }
 
     void PlayHitSound()
     {
-        FMODUnity.RuntimeManager.PlayOneShot(PlayerHitSound, transform.position);
+        FMODUnity.RuntimeManager.PlayOneShot(PlayerHitSound);
     }
 }

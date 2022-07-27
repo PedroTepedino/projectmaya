@@ -62,6 +62,6 @@ public class PlayerAudioController : MonoBehaviour
 
     void PlayDeath()
     {
-        RuntimeManager.PlayOneShot(PlayerDeathSound, transform.position);
+        RuntimeManager.PlayOneShot(PlayerDeathSound);
     }
 }
