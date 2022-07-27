@@ -56262,6 +56262,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9087698873106391761, guid: 342f349086828374a9b9a32692727655, type: 3}
   m_PrefabInstance: {fileID: 1792345530}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &640747106 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8525528409048871745, guid: 02936be844a5975449fff59981d440d4, type: 3}
+  m_PrefabInstance: {fileID: 4241498581606518830}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68246763689734e499aad63b4ba88aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &862375205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64096,9 +64107,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1960483812}
     m_Modifications:
+    - target: {fileID: 1712883671748695929, guid: 342f349086828374a9b9a32692727655, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712883671748695929, guid: 342f349086828374a9b9a32692727655, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712883671748695929, guid: 342f349086828374a9b9a32692727655, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712883671748695929, guid: 342f349086828374a9b9a32692727655, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 640747106}
+    - target: {fileID: 1712883671748695929, guid: 342f349086828374a9b9a32692727655, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712883671748695929, guid: 342f349086828374a9b9a32692727655, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MasterVolumeLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712883671748695929, guid: 342f349086828374a9b9a32692727655, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712883671748695929, guid: 342f349086828374a9b9a32692727655, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2638988270589151809, guid: 342f349086828374a9b9a32692727655, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891157830220057602, guid: 342f349086828374a9b9a32692727655, type: 3}
+      propertyPath: m_Name
+      value: Master Slider
       objectReference: {fileID: 0}
     - target: {fileID: 4798147397343033729, guid: 342f349086828374a9b9a32692727655, type: 3}
       propertyPath: m_AnchorMax.y
@@ -90821,7 +90868,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8606061, y: 1}
+    m_SensorSize: {x: 1.7893939, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -90846,17 +90893,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2105538172 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 861080399506069532, guid: e07a5b85e949db641b0fee7e38281ef5, type: 3}
-  m_PrefabInstance: {fileID: 1503252644}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2107607031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93272,46 +93308,6 @@ MonoBehaviour:
       Data3: -1699154010
       Data4: 1693025226
     Path: event:/UI/Select
---- !u!114 &3996395461779331342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160001953}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Emitters:
-  - Target: {fileID: 2105538172}
-    Params:
-    - Name: Boss Music Filter
-      Value: 1
-    - Name: Parameter 1
-      Value: 1
-  TriggerEvent: 11
---- !u!114 &3996395461779331343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160001953}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Emitters:
-  - Target: {fileID: 2105538172}
-    Params:
-    - Name: Boss Music Filter
-      Value: 0
-  TriggerEvent: 12
 --- !u!114 &3996395461779331344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93325,8 +93321,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  parameter: 
-  TriggerEvent: 0
+  parameter: Menu Filter
+  TriggerEvent: 11
+  value: 1
+--- !u!114 &3996395461779331345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160001953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  parameter: Menu Filter
+  TriggerEvent: 12
   value: 0
 --- !u!1001 &4241498581606518830
 PrefabInstance:
