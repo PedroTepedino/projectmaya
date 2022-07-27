@@ -194,7 +194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13956595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0000004172325, y: 0.00000029802322, z: -10}
+  m_LocalPosition: {x: 0.00000059604645, y: 0.00000029802322, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -63473,6 +63473,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 861080399506069532, guid: e07a5b85e949db641b0fee7e38281ef5, type: 3}
+      propertyPath: Params.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 861080399506069532, guid: e07a5b85e949db641b0fee7e38281ef5, type: 3}
+      propertyPath: Params.Array.data[0].Name
+      value: Parameter 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 861080399506069532, guid: e07a5b85e949db641b0fee7e38281ef5, type: 3}
+      propertyPath: Params.Array.data[1].Name
+      value: Boss Music Filter
+      objectReference: {fileID: 0}
+    - target: {fileID: 861080399506069532, guid: e07a5b85e949db641b0fee7e38281ef5, type: 3}
+      propertyPath: Params.Array.data[0].Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 861080399506069532, guid: e07a5b85e949db641b0fee7e38281ef5, type: 3}
+      propertyPath: Params.Array.data[1].Value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 861080399506069534, guid: e07a5b85e949db641b0fee7e38281ef5, type: 3}
       propertyPath: m_Name
       value: Boss Music
@@ -90801,7 +90821,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.8606061, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -90818,7 +90838,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069192477}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0000004172325, y: 0.00000029802322, z: -10}
+  m_LocalPosition: {x: 0.00000059604645, y: 0.00000029802322, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -90826,6 +90846,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2105538172 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 861080399506069532, guid: e07a5b85e949db641b0fee7e38281ef5, type: 3}
+  m_PrefabInstance: {fileID: 1503252644}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2107607031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93241,6 +93272,46 @@ MonoBehaviour:
       Data3: -1699154010
       Data4: 1693025226
     Path: event:/UI/Select
+--- !u!114 &3996395461779331342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160001953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Emitters:
+  - Target: {fileID: 2105538172}
+    Params:
+    - Name: Boss Music Filter
+      Value: 1
+    - Name: Parameter 1
+      Value: 1
+  TriggerEvent: 11
+--- !u!114 &3996395461779331343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160001953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Emitters:
+  - Target: {fileID: 2105538172}
+    Params:
+    - Name: Boss Music Filter
+      Value: 0
+  TriggerEvent: 12
 --- !u!1001 &4241498581606518830
 PrefabInstance:
   m_ObjectHideFlags: 0

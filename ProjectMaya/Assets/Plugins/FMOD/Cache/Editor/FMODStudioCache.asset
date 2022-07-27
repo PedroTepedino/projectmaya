@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 637945341235304762
+  lastModified: 637945403705416219
   FileSizes: []
   Exists: 1
 --- !u!114 &-7008994142415523763
@@ -68,7 +68,8 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 316840067843133836}
   MinDistance: 1
   MaxDistance: 20
   Length: 211200
@@ -195,10 +196,10 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637945341233777912
+  lastModified: 637945403704476010
   FileSizes:
   - Name: 
-    Value: 1828
+    Value: 1948
   Exists: 1
 --- !u!114 &-1660293707435805272
 MonoBehaviour:
@@ -294,7 +295,7 @@ MonoBehaviour:
   - {fileID: 2287336632285706948}
   StringsBanks:
   - {fileID: -3266379407884158868}
-  cacheTime: 637945351107665359
+  cacheTime: 637945403705416219
   cacheVersion: 10
 --- !u!114 &289549054948284263
 MonoBehaviour:
@@ -323,6 +324,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 450
+--- !u!114 &316840067843133836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Boss Music/Boss Music Filter
+  m_EditorClassIdentifier: 
+  Name: Boss Music Filter
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2108103740
+    data2: 1929984062
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &367427395368238098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,7 +417,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637945351107665359
+  lastModified: 637945403704455998
   FileSizes: []
   Exists: 1
 --- !u!114 &2620629117227427491
@@ -437,7 +462,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637945341234514208
+  lastModified: 637945403705196162
   FileSizes: []
   Exists: 1
 --- !u!114 &6400341754612155374
@@ -536,7 +561,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Boss.bank
   Name: Boss
   StudioPath: bank:/Boss
-  lastModified: 637945341233557214
+  lastModified: 637945403704160894
   FileSizes: []
   Exists: 1
 --- !u!114 &8783947743979236082

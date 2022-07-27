@@ -46,9 +46,9 @@ public class AudioManager : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        music = FMODUnity.RuntimeManager.GetBus("bus:/Master Bus/Music");
-        sfx = FMODUnity.RuntimeManager.GetBus("bus:/Master Bus/SFX");
-        master = FMODUnity.RuntimeManager.GetBus("bus:/Master Bus");
+        music = FMODUnity.RuntimeManager.GetBus("bus:/Master/Music");
+        sfx = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
+        master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
         master.setVolume(masterVolume);
         master.setMute(masterMute);
         music.setVolume(musicVolume);
