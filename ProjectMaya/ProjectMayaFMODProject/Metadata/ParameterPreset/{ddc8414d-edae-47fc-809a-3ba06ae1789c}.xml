@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="ParameterPreset" id="{e8711bb5-9088-4bfc-a96b-898fee29d558}">
+	<object class="ParameterPreset" id="{ddc8414d-edae-47fc-809a-3ba06ae1789c}">
 		<property name="name">
-			<value>Boss Music Filter</value>
+			<value>Menu Filter</value>
 		</property>
 		<relationship name="folder">
 			<destination>{961b67c4-4944-4423-89ab-6e48676fb3a3}</destination>
 		</relationship>
 		<relationship name="parameter">
-			<destination>{5b975d4d-b21a-40a4-a9d2-db784b18df50}</destination>
+			<destination>{aca86786-e5cc-400f-a9d9-7c5597184e59}</destination>
 		</relationship>
 	</object>
-	<object class="GameParameter" id="{5b975d4d-b21a-40a4-a9d2-db784b18df50}">
+	<object class="GameParameter" id="{aca86786-e5cc-400f-a9d9-7c5597184e59}">
 		<property name="parameterType">
 			<value>1</value>
 		</property>
 		<property name="maximum">
 			<value>2</value>
 		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
 		<property name="initialValue">
 			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
 		</property>
 	</object>
 </objects>

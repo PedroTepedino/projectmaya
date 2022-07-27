@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 637945403705416219
+  lastModified: 637945412936992585
   FileSizes: []
   Exists: 1
 --- !u!114 &-7008994142415523763
@@ -69,10 +69,34 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 316840067843133836}
+  - {fileID: 2512563743080115952}
   MinDistance: 1
   MaxDistance: 20
   Length: 211200
+--- !u!114 &-6350802096263600948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu Filter
+  m_EditorClassIdentifier: 
+  Name: Menu Filter
+  StudioPath: parameter:/Menu Filter
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2911505680
+    data2: 2475878567
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-5795435143371359667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,10 +220,10 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637945403704476010
+  lastModified: 637945412936030531
   FileSizes:
   - Name: 
-    Value: 1948
+    Value: 1942
   Exists: 1
 --- !u!114 &-1660293707435805272
 MonoBehaviour:
@@ -290,12 +314,13 @@ MonoBehaviour:
   - {fileID: 515221777806264069}
   - {fileID: -4233212615185941233}
   - {fileID: -5795435143371359667}
-  EditorParameters: []
+  EditorParameters:
+  - {fileID: -6350802096263600948}
   MasterBanks:
   - {fileID: 2287336632285706948}
   StringsBanks:
   - {fileID: -3266379407884158868}
-  cacheTime: 637945403705416219
+  cacheTime: 637945412936992585
   cacheVersion: 10
 --- !u!114 &289549054948284263
 MonoBehaviour:
@@ -324,30 +349,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 450
---- !u!114 &316840067843133836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Boss Music/Boss Music Filter
-  m_EditorClassIdentifier: 
-  Name: Boss Music Filter
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2108103740
-    data2: 1929984062
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &367427395368238098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,8 +418,32 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637945403704455998
+  lastModified: 637945412936010513
   FileSizes: []
+  Exists: 1
+--- !u!114 &2512563743080115952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Boss Music/Menu Filter
+  m_EditorClassIdentifier: 
+  Name: Menu Filter
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2911505680
+    data2: 2475878567
+  Type: 1
+  IsGlobal: 1
+  Labels: []
   Exists: 1
 --- !u!114 &2620629117227427491
 MonoBehaviour:
@@ -462,7 +487,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637945403705196162
+  lastModified: 637945412936772535
   FileSizes: []
   Exists: 1
 --- !u!114 &6400341754612155374
@@ -561,7 +586,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Boss.bank
   Name: Boss
   StudioPath: bank:/Boss
-  lastModified: 637945403704160894
+  lastModified: 637945412935710451
   FileSizes: []
   Exists: 1
 --- !u!114 &8783947743979236082
