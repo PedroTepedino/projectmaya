@@ -197,11 +197,11 @@ MonoBehaviour:
     Path: event:/Player/Player Hover Moving
   PlayerDeathSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1162479456
+      Data2: 1135046990
+      Data3: -688647002
+      Data4: 1679687973
+    Path: event:/Player/Player Death
   rb: {fileID: 3659154489680133298}
   ls: {fileID: 0}
 --- !u!58 &1682943143
@@ -488,6 +488,7 @@ MonoBehaviour:
   reloadTime: 1
   shootingSpeed: 0.5
   projectilePrefab: {fileID: 6318480175451187885, guid: c7ce9eec23141cf4bade2a747365c895, type: 3}
+  shootingParticle: {fileID: 0}
   spawnPosition: {fileID: 3659154489678329510}
   startingPoolSize: 20
   maxPoolSize: 100
