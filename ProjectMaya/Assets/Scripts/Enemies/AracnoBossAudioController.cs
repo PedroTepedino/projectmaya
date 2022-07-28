@@ -19,12 +19,12 @@ public class AracnoBossAudioController : MonoBehaviour
     }
     private void OnEnable()
     {
-        ls.OnDie += PlayHit;
+        ls.OnChangeLife += PlayHit;
     }
 
     private void OnDisable()
     {
-        ls.OnDie -= PlayHit;
+        ls.OnChangeLife -= PlayHit;
     }
 
     void PlayIdleSound()

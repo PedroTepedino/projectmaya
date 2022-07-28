@@ -797,11 +797,11 @@ MonoBehaviour:
     Path: event:/Boss/Hover
   BossHitSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1970154678
+      Data2: 1120421810
+      Data3: 1833583036
+      Data4: -2068911110
+    Path: event:/Boss/Boss Hit
   ls: {fileID: 0}
 --- !u!1 &7561198806260476943
 GameObject:
