@@ -57,7 +57,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3227567023262153898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.9, z: 0}
+  m_LocalPosition: {x: 0, y: -0.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -104,7 +104,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4b3001d988006e64f8e10b7858b9d44b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e45f02344e5ad49aed8cb8e348f766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxLife: 5
+  _maxLife: 10
 --- !u!114 &3659154489680133295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,7 +409,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2070350706, guid: 9cb032fc3a4de654ea5d4b3c1fe6c6dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -495,7 +495,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -439784307, guid: 5994f03a173a60a4b9b51f3b28662e01, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -602,10 +602,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponPriority: 0
   magazineSize: 10
-  reloadTime: 1
+  reloadTime: 0.15
   shootingSpeed: 0.5
   projectilePrefab: {fileID: 6318480175451187885, guid: c7ce9eec23141cf4bade2a747365c895, type: 3}
-  shootingParticle: {fileID: 0}
+  shootingParticle: {fileID: 590671145293862508, guid: 39c334bfdeb234943ac174d42180d61b, type: 3}
   spawnPosition: {fileID: 3659154489678329510}
   startingPoolSize: 20
   maxPoolSize: 100
@@ -753,7 +753,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: ea8f1bea70641714c8d2f5cf47ba0a44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

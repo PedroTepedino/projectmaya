@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6350adcae5066924880aa7dd214658c2, type: 3}
   m_Name: PlayerParameters
   m_EditorClassIdentifier: 
-  Speed: 5
-  Acceleration: 1
-  Friction: 1.2
+  Speed: 25
+  Acceleration: 8
+  Friction: 0.7
   SpeedDotMultiplier:
     serializedVersion: 2
     m_Curve:

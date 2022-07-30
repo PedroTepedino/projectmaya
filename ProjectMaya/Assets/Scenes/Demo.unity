@@ -194,7 +194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13956595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00000047683716, y: 0.00000029802322, z: -10}
+  m_LocalPosition: {x: 0.00000059604645, y: 0.00000029802322, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -69261,10 +69261,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3659154489680133296, guid: 2d0f3610d9ebf774ca109f9bc1533671, type: 3}
-      propertyPath: _maxLife
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3659154489680133299, guid: 2d0f3610d9ebf774ca109f9bc1533671, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -69309,29 +69305,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3659154489819657141, guid: 2d0f3610d9ebf774ca109f9bc1533671, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3659154490040190635, guid: 2d0f3610d9ebf774ca109f9bc1533671, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
+    - target: {fileID: 3659154490102548881, guid: 2d0f3610d9ebf774ca109f9bc1533671, type: 3}
+      propertyPath: reloadTime
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3659154490102548881, guid: 2d0f3610d9ebf774ca109f9bc1533671, type: 3}
-      propertyPath: shootingParticle
-      value: 
-      objectReference: {fileID: 590671145293862508, guid: 39c334bfdeb234943ac174d42180d61b, type: 3}
-    - target: {fileID: 3659154490673245878, guid: 2d0f3610d9ebf774ca109f9bc1533671, type: 3}
-      propertyPath: m_SortingOrder
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5306233234236852721, guid: 2d0f3610d9ebf774ca109f9bc1533671, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5641485558257149042, guid: 2d0f3610d9ebf774ca109f9bc1533671, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.72
+      propertyPath: shootingSpeed
+      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d0f3610d9ebf774ca109f9bc1533671, type: 3}
@@ -89682,6 +89662,18 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7561198805436237560, guid: ca6d035d8f209cf4085c087be28228da, type: 3}
+      propertyPath: reloadTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561198805436237560, guid: ca6d035d8f209cf4085c087be28228da, type: 3}
+      propertyPath: magazineSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561198805436237560, guid: ca6d035d8f209cf4085c087be28228da, type: 3}
+      propertyPath: shootingSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561198805436237560, guid: ca6d035d8f209cf4085c087be28228da, type: 3}
       propertyPath: shootingParticle
       value: 
       objectReference: {fileID: 4199503903801096767, guid: f20df315bc6b13543b9b35e0ae28251e, type: 3}
@@ -89700,6 +89692,14 @@ PrefabInstance:
     - target: {fileID: 7561198806260476940, guid: ca6d035d8f209cf4085c087be28228da, type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561198806831281838, guid: ca6d035d8f209cf4085c087be28228da, type: 3}
+      propertyPath: reloadTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561198806831281838, guid: ca6d035d8f209cf4085c087be28228da, type: 3}
+      propertyPath: shootingSpeed
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7561198806831281838, guid: ca6d035d8f209cf4085c087be28228da, type: 3}
       propertyPath: shootingParticle
@@ -106258,7 +106258,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7798165, y: 1}
+    m_SensorSize: {x: 2.1356878, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -106275,7 +106275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069192477}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00000047683716, y: 0.00000029802322, z: -10}
+  m_LocalPosition: {x: 0.00000059604645, y: 0.00000029802322, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
