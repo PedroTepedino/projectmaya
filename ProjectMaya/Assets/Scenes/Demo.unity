@@ -69309,9 +69309,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3659154489819657141, guid: 2d0f3610d9ebf774ca109f9bc1533671, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3659154490040190635, guid: 2d0f3610d9ebf774ca109f9bc1533671, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3659154490102548881, guid: 2d0f3610d9ebf774ca109f9bc1533671, type: 3}
       propertyPath: shootingParticle
@@ -69320,6 +69324,10 @@ PrefabInstance:
     - target: {fileID: 3659154490673245878, guid: 2d0f3610d9ebf774ca109f9bc1533671, type: 3}
       propertyPath: m_SortingOrder
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306233234236852721, guid: 2d0f3610d9ebf774ca109f9bc1533671, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d0f3610d9ebf774ca109f9bc1533671, type: 3}
