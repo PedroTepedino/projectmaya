@@ -22,6 +22,7 @@ public class MachineGun : WeaponBase
             var projectile = pool.Get();
             projectile.direction = Vector2.down;
             magazineRemaning--;
-        }
+            timerToShoot = shootingSpeed;
+        }    
     }
 }

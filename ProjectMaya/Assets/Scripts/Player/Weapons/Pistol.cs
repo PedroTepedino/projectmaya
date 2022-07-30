@@ -11,7 +11,7 @@ public class Pistol : WeaponBase
             shootingParticle.Play();
             var projectile = pool.Get();
             projectile.direction = aimDirection.normalized;
-            timerToShoot = reloadTime;
+            timerToShoot = shootingSpeed;
             //magazineRemaning--;
         }
     }
