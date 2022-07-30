@@ -1,5 +1,37 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &717343429364368219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3641796721326902563}
+  m_Layer: 0
+  m_Name: AimBlue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3641796721326902563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717343429364368219}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3659154490673245879}
+  m_Father: {fileID: 3659154490134726758}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3227567023262153898
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,7 +661,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3659154490102548878}
-  - {fileID: 3659154490673245879}
+  - {fileID: 3641796721326902563}
   m_Father: {fileID: 3659154489680133299}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -648,7 +680,7 @@ MonoBehaviour:
   availableWeapons:
   - {fileID: 3659154490102548881}
   playerInput: {fileID: 0}
-  aimSprite: {fileID: 3659154490673245876}
+  aimSprite: {fileID: 717343429364368219}
 --- !u!1 &3659154490673245876
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,7 +692,7 @@ GameObject:
   - component: {fileID: 3659154490673245879}
   - component: {fileID: 3659154490673245878}
   m_Layer: 5
-  m_Name: AimBlue
+  m_Name: AimBlueSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -674,12 +706,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3659154490673245876}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.6588509, y: 1.7223636, z: 0.044899818}
+  m_LocalPosition: {x: 6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3659154490134726758}
-  m_RootOrder: 1
+  m_Father: {fileID: 3641796721326902563}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3659154490673245878
 SpriteRenderer:

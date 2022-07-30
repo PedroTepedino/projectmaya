@@ -7,7 +7,8 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] [InlineEditor] 
+    [SerializeField]
+    [InlineEditor]
     private PlayerParameters _playerParameters;
 
     private Rigidbody2D _Rigidbody2D;
@@ -40,9 +41,8 @@ public class Player : MonoBehaviour
     private void OnEnable()
     {
         this.transform.DOScale(1, 0.2f).From(0f).SetEase(Ease.OutBack);
-        
+
         _playerInput.actions["Dash"].started += ListenToDashButton;
-        _playerInput.actions["Dash"].canceled += ListenToDashButton;
         _playerInput.actions["Pause"].started += ListenOnPause;
 
     }
@@ -50,14 +50,13 @@ public class Player : MonoBehaviour
     private void OnDisable()
     {
         _playerInput.actions["Dash"].started -= ListenToDashButton;
-        _playerInput.actions["Dash"].canceled -= ListenToDashButton;
         _playerInput.actions["Pause"].started -= ListenOnPause;
     }
 
     private void Update()
     {
         //if (_mover is not Dashing)
-            //_aimSystem.Tick(Time.deltaTime);
+        //_aimSystem.Tick(Time.deltaTime);
         if (_playerInput.actions["Move"].ReadValue<Vector2>().magnitude > 0.1f)
         {
             lastDirection = _playerInput.actions["Move"].ReadValue<Vector2>();
@@ -73,7 +72,7 @@ public class Player : MonoBehaviour
     {
         // if (_mover is not Dashing)
         //     return;
-        
+
         // if (collision.gameObject.CompareTag("Player"))
         // {
         //     var other = collision.gameObject.GetComponent<Player>();
@@ -94,7 +93,7 @@ public class Player : MonoBehaviour
     {
         if (_mover is Dashing or Recovering)
             return;
-        
+
         // if (context.started)
         // {
         //     _mover = GetMover<Charging>();
@@ -141,7 +140,7 @@ public class Player : MonoBehaviour
             ForceMover => new ForceMover(_playerInput.actions["Move"], _Rigidbody2D, _playerParameters),
             Charging => new Charging(_Rigidbody2D, _playerParameters),
             Dashing => new Dashing(_playerInput.actions["Move"], weaponSystem.aimDirection, _Rigidbody2D, _playerParameters),
-            Recovering => new Recovering(_Rigidbody2D, _playerParameters),       
+            Recovering => new Recovering(_Rigidbody2D, _playerParameters),
             _ => null
         };
     }

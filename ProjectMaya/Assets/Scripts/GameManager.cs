@@ -30,12 +30,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private SceneTransitionManager sceneManager;
     [SerializeField] private string menuSceneName;
-    
-    private bool isGamePaused = false;
-    
-    [HideInInspector] public static bool isBossStarted = false;
 
-    private void Awake() 
+    private bool isGamePaused = false;
+
+    public static bool isBossStarted = false;
+    public static bool GamepadConnected;
+
+    private void Awake()
     {
         if (instance == null)
         {
@@ -46,26 +47,42 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        GamepadConnected = (Gamepad.all.Count > 0);
+        Debug.Log(GamepadConnected);
+        if (GamepadConnected)
+        {
+            InputSystem.DisableDevice(Keyboard.current);
+            InputSystem.DisableDevice(Mouse.current);
+        }
+        else
+        {
+            InputSystem.EnableDevice(Keyboard.current);
+            InputSystem.EnableDevice(Mouse.current);
+        }
     }
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         playerInput.actions["Pause"].started += ListenToPauseButton;
     }
 
-    private void OnDisable() {
+    private void OnDisable()
+    {
         playerInput.actions["Pause"].started -= ListenToPauseButton;
     }
 
     private void ListenToPauseButton(InputAction.CallbackContext context)
     {
-        if (!context.started)
+        if (!context.started || sceneManager.actualSceneName == menuSceneName)
         {
             return;
         }
         if (isGamePaused)
         {
             ResumeGame();
-        }else
+        }
+        else
         {
             PauseGame();
         }

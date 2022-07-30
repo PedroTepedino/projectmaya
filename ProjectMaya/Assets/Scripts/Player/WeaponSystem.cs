@@ -9,27 +9,37 @@ public class WeaponSystem : MonoBehaviour
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private GameObject aimSprite;
 
-    public Vector2 aimDirection {get; private set;}
+    public Vector2 aimDirection { get; private set; }
     private Camera camera;
     private WeaponBase selectedWeapon;
     private Rigidbody2D weaponRigidbody;
     private int selectedWeaponID;
     private bool isShooting;
 
-    private void Awake() 
+    private void Awake()
     {
         playerInput = this.GetComponentInParent<PlayerInput>();
         camera = Camera.main;
     }
-    
-    private void Start() 
+
+    private void Start()
     {
         selectedWeapon = availableWeapons[0];
         selectedWeapon.gameObject.SetActive(true);
         weaponRigidbody = selectedWeapon.gameObject.GetComponent<Rigidbody2D>();
+        // if (GameManager.GamepadConnected)
+        // {
+        //     Debug.Log(aimSprite.GetComponentInChildren<SpriteRenderer>().gameObject.transform.position);
+        //     aimSprite.GetComponentInChildren<SpriteRenderer>().gameObject.transform.position = new Vector3(6, 0, 0);
+        // }
+        // else
+        // {
+        //     aimSprite.GetComponentInChildren<SpriteRenderer>().gameObject.transform.position = Vector3.zero;
+        // }
+
     }
 
-    private void OnEnable() 
+    private void OnEnable()
     {
         //playerInput.actions["Shoot"].performed += ListenToShootButton;
         playerInput.actions["Shoot"].started += ListenToShootButton;
@@ -41,10 +51,9 @@ public class WeaponSystem : MonoBehaviour
         playerInput.actions["SelectWeapon4"].started += ListenToSelectWeapon4Button;
         playerInput.actions["SelectNextWeapon"].started += ListenToSelectNextWeaponButton;
         playerInput.actions["SelectPreviousWeapon"].started += ListenToSelectPreviousWeaponButton;
-        playerInput.actions["Aim"].performed += ListenToAim;
     }
 
-    private void OnDisable() 
+    private void OnDisable()
     {
         //playerInput.actions["Shoot"].performed -= ListenToShootButton;
         playerInput.actions["Shoot"].started -= ListenToShootButton;
@@ -56,10 +65,27 @@ public class WeaponSystem : MonoBehaviour
         playerInput.actions["SelectWeapon4"].started -= ListenToSelectWeapon4Button;
         playerInput.actions["SelectNextWeapon"].started -= ListenToSelectNextWeaponButton;
         playerInput.actions["SelectPreviousWeapon"].started -= ListenToSelectPreviousWeaponButton;
-        playerInput.actions["Aim"].performed -= ListenToAim;
     }
 
-    private void Update() {
+    private void Update()
+    {
+        if (GameManager.GamepadConnected)
+        {
+            GamepadAim();
+        }
+        else
+        {
+            MouseAim();
+        }
+
+        if (isShooting)
+        {
+            selectedWeapon.Shoot();
+        }
+    }
+
+    private void MouseAim()
+    {
         var mousePosition = playerInput.actions["aim"].ReadValue<Vector2>();
         var mouseWorldPosition = camera.ScreenToWorldPoint(mousePosition);
         mouseWorldPosition.z = 0f;
@@ -67,17 +93,29 @@ public class WeaponSystem : MonoBehaviour
         aimSprite.transform.position = mouseWorldPosition;
 
         aimDirection = mouseWorldPosition - this.gameObject.transform.position;
-        //aimDirection.Normalize();
-        
+
         var angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
         weaponRigidbody.MoveRotation(angle);
 
         selectedWeapon.aimDirection = aimDirection;
+        Debug.Log("test");
+    }
 
-        if (isShooting)
+    private void GamepadAim()
+    {
+
+        if (playerInput.actions["aim"].ReadValue<Vector2>().magnitude > 0.1f)
         {
-            selectedWeapon.Shoot();
+            var aimStickDirection = playerInput.actions["aim"].ReadValue<Vector2>();
+
+            aimDirection = aimStickDirection;
         }
+
+        var angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+        weaponRigidbody.MoveRotation(angle);
+        aimSprite.transform.eulerAngles = new Vector3(0, 0, angle);
+
+        selectedWeapon.aimDirection = aimDirection;
     }
 
     private void ListenToShootButton(InputAction.CallbackContext context)
@@ -171,20 +209,6 @@ public class WeaponSystem : MonoBehaviour
             selectedWeapon.gameObject.SetActive(true);
             weaponRigidbody = selectedWeapon.gameObject.GetComponent<Rigidbody2D>();
         }
-    }
-
-    private void ListenToAim(InputAction.CallbackContext context)
-    {
-        var mouseWorldPosition = camera.ScreenToWorldPoint(context.ReadValue<Vector2>());
-        mouseWorldPosition.z = 0f;
-
-        aimSprite.transform.position = mouseWorldPosition;
-
-        aimDirection = mouseWorldPosition - this.gameObject.transform.position;
-        aimDirection.Normalize();
-        
-        var angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
-        weaponRigidbody.MoveRotation(angle);
     }
 }
 

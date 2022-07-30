@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneTransitionManager : MonoBehaviour
 {
     public Animator transitionAnimator;
+    public string actualSceneName;
 
     public void SwitchToScene(string sceneName)
     {
@@ -20,6 +21,8 @@ public class SceneTransitionManager : MonoBehaviour
         Debug.Log("Load "+sceneName);
 
         SceneManager.LoadScene(sceneName);
+        
+        actualSceneName = SceneManager.GetActiveScene().name;
 
         // AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
         
