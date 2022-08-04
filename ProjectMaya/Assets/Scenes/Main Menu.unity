@@ -1820,7 +1820,7 @@ PrefabInstance:
     - target: {fileID: 6731066201843454007, guid: 233fcb01aae70fd4a9afff67cd10f1ca, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1215298256, guid: 1203d5ecab7a41c4c9ee9ef5fec89999, type: 3}
+      objectReference: {fileID: 1931553748, guid: 1203d5ecab7a41c4c9ee9ef5fec89999, type: 3}
     - target: {fileID: 6731066201843454007, guid: 233fcb01aae70fd4a9afff67cd10f1ca, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
