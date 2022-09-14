@@ -11,6 +11,7 @@ public class TabGroup : MonoBehaviour
     public Sprite tabHoverSprite;
     public Sprite tabActiveSprite;
     public List<GameObject> objectsToSwap;
+    Button btt;
 
     public void Subscribe(TabButton button)
     {
@@ -44,7 +45,7 @@ public class TabGroup : MonoBehaviour
         selectedTab = button;
         selectedTab.Selected();
         ResetTabs();
-        button.background.sprite = tabActiveSprite;
+        //button.background.sprite = tabActiveSprite;
         int index = button.transform.GetSiblingIndex();
         for (int i = 0; i < objectsToSwap.Count; i++)
         {
@@ -67,7 +68,7 @@ public class TabGroup : MonoBehaviour
                 continue;
             }
             
-            button.background.sprite = tabIdleSprite;
+            //button.background.sprite = tabIdleSprite;
         }
     }
 }
