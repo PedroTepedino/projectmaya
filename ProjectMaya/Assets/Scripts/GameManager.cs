@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
         }
 
         GamepadConnected = (Gamepad.all.Count > 0);
-        Debug.Log(GamepadConnected);
         if (GamepadConnected)
         {
             InputSystem.DisableDevice(Keyboard.current);

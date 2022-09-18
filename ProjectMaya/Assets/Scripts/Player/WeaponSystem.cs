@@ -98,7 +98,6 @@ public class WeaponSystem : MonoBehaviour
         weaponRigidbody.MoveRotation(angle);
 
         selectedWeapon.aimDirection = aimDirection;
-        Debug.Log("test");
     }
 
     private void GamepadAim()
