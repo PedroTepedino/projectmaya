@@ -81614,6 +81614,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6885586170859273985, guid: 2c6596f24fcbd484e97cd94e7bd9d2a5, type: 3}
   m_PrefabInstance: {fileID: 511055904}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &517520613 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7561198805308846843, guid: ca6d035d8f209cf4085c087be28228da, type: 3}
+  m_PrefabInstance: {fileID: 1971167572}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &517520617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517520613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ba1d47830882149a2829405f82afae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BossIdleSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  BossWalkSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  BossHoverSound:
+    Guid:
+      Data1: -2027349662
+      Data2: 1184776110
+      Data3: 1702890150
+      Data4: 684702797
+    Path: event:/Boss/Hover
+  BossHitSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  ls: {fileID: 0}
 --- !u!1001 &530577653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113964,7 +114010,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0048544, y: 1}
+    m_SensorSize: {x: 1.8375394, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

@@ -144,7 +144,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637945451212145617
+  lastModified: 637946148044023728
   FileSizes: []
   Exists: 1
 --- !u!114 &-3177801524202575873
@@ -216,7 +216,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Boss.bank
   Name: Boss
   StudioPath: bank:/Boss
-  lastModified: 637946159772019064
+  lastModified: 637946151909705016
   FileSizes: []
   Exists: 1
 --- !u!114 &-642801018061291459
@@ -234,7 +234,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637945451212295266
+  lastModified: 637946148044043726
   FileSizes:
   - Name: 
     Value: 1942
@@ -280,7 +280,7 @@ MonoBehaviour:
   - {fileID: -3382403134875467095}
   StringsBanks:
   - {fileID: -642801018061291459}
-  cacheTime: 637946159772019064
+  cacheTime: 637946151909705016
   cacheVersion: 10
 --- !u!114 &857396549785961893
 MonoBehaviour:
@@ -324,7 +324,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637945451212793907
+  lastModified: 637946148044768851
   FileSizes: []
   Exists: 1
 --- !u!114 &3255334385173481756
@@ -396,7 +396,7 @@ MonoBehaviour:
   Path: ProjectMayaFMODProject/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 637946141250582610
+  lastModified: 637946148044983899
   FileSizes: []
   Exists: 1
 --- !u!114 &3799767860726080305
