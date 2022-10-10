@@ -606,7 +606,6 @@ MonoBehaviour:
   shootingSpeed: 0.15
   projectilePrefab: {fileID: 6318480175451187885, guid: c7ce9eec23141cf4bade2a747365c895, type: 3}
   shootingParticle: {fileID: 590671145293862508, guid: 39c334bfdeb234943ac174d42180d61b, type: 3}
-  spawnPosition: {fileID: 3659154489678329510}
   startingPoolSize: 20
   maxPoolSize: 100
   aimDirection: {x: 0, y: 0}
@@ -706,7 +705,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3659154490673245876}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
