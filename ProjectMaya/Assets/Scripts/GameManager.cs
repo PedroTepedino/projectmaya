@@ -27,7 +27,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject optionsMenu;
+    [SerializeField] private GameObject deathScreen;
     [SerializeField] private PlayerInput playerInput;
+    [SerializeField] private LifeSystem playerLifeSystem;
     [SerializeField] private SceneTransitionManager sceneManager;
     [SerializeField] private string menuSceneName;
 
@@ -64,11 +66,13 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         playerInput.actions["Pause"].started += ListenToPauseButton;
+        playerLifeSystem.OnDie += ShowDeathScreen;
     }
 
     private void OnDisable()
     {
         playerInput.actions["Pause"].started -= ListenToPauseButton;
+        playerLifeSystem.OnDie -= ShowDeathScreen;
     }
 
     private void ListenToPauseButton(InputAction.CallbackContext context)
@@ -120,5 +124,11 @@ public class GameManager : MonoBehaviour
         sceneManager.SwitchToScene(menuSceneName);
     }
 
+    public void ShowDeathScreen()
+    {
+        deathScreen.SetActive(true);
+        Time.timeScale = 0f;
+        playerInput.SwitchCurrentActionMap("UI");
+    }
 
 }

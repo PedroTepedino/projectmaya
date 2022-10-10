@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
   optionsMenu: {fileID: 0}
+  deathScreen: {fileID: 0}
   playerInput: {fileID: 0}
+  playerLifeSystem: {fileID: 0}
   sceneManager: {fileID: 0}
   menuSceneName: Main Menu
