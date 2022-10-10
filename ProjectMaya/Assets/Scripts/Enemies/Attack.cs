@@ -25,12 +25,14 @@ public class Attack : MonoBehaviour
     [AssetsOnly]
     [InlineEditor]
     private WeaponBase[] availableAttacks;
-    public WeaponBase selectedWeapon {get; private set;}
+    public WeaponBase selectedWeapon { get; private set; }
 
     private EnemyStateMachine _controller;
+    private Targeting targetingSystem;
     //private int attackChancesSum = 1;
     private int selectedAttackIndex;
 
+    [HideInInspector] public int avalibleWeaponsNumber;
     [HideInInspector] public bool isInRange;
 
     public Action OnAttack;
@@ -38,6 +40,7 @@ public class Attack : MonoBehaviour
     private void Awake()
     {
         _controller = GetComponent<EnemyStateMachine>();
+        targetingSystem = GetComponent<Targeting>();
 
         if (availableAttacks.Length > 0)
         {
@@ -68,15 +71,15 @@ public class Attack : MonoBehaviour
         //     }
         // }
 
-        for (int i = 0; i < availableAttacks.Length; i++)
+        for (int i = 0; i < avalibleWeaponsNumber; i++)
         {
-            if (/*(selectedWeapon.WeaponPriority < availableAttacks[i].WeaponPriority) &&*/ (availableAttacks[i].magazineRemaning > 0))
+            if ((availableAttacks[i].magazineRemaning > 0))
             {
                 selectedWeapon = availableAttacks[i];
 
             }
         }
-
+        selectedWeapon.aimDirection = targetingSystem.target.position;
         selectedWeapon.Shoot();
         OnAttack?.Invoke();
     }

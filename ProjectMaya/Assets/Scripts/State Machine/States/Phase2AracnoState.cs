@@ -12,6 +12,7 @@ public class Phase2AracnoState : IState
     private readonly Attack attack;
     private readonly float movingSpeed;
     private readonly float acceleration = 1.5f;
+    private readonly int maxAvalibleWeapons = 7;
 
     public Phase2AracnoState(GameObject owner)
     {
@@ -20,12 +21,13 @@ public class Phase2AracnoState : IState
         ownerRigidbody = ownerGameObject.GetComponent<Rigidbody2D>();
         wallCheck = ownerGameObject.GetComponent<WallChecker>();
         attack = ownerGameObject.GetComponent<Attack>();
-        movingSpeed = ownerController.EnemyParameters.MovingSpeed*acceleration;
+        movingSpeed = ownerController.EnemyParameters.MovingSpeed * acceleration;
     }
 
     public void OnEnter()
     {
-        Debug.Log("Phase2");        
+        Debug.Log("Phase2");
+        attack.avalibleWeaponsNumber = maxAvalibleWeapons;
     }
 
     public void OnExit()
@@ -46,7 +48,7 @@ public class Phase2AracnoState : IState
         attack.SelectAttack();
     }
 
-     private void Move()
+    private void Move()
     {
         movement.Set(ownerController.movingRight ? movingSpeed : -movingSpeed, ownerRigidbody.velocity.y);
         ownerRigidbody.velocity = movement;

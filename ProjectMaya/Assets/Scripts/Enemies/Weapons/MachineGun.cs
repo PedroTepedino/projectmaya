@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MachineGun : WeaponBase
 {
-    protected override void Update() 
+    protected override void Update()
     {
         base.Update();
 
@@ -20,9 +20,9 @@ public class MachineGun : WeaponBase
         {
             shootingParticle.Play();
             var projectile = pool.Get();
-            projectile.direction = Vector2.down;
+            projectile.direction = transform.up;
             magazineRemaning--;
             timerToShoot = shootingSpeed;
-        }    
+        }
     }
 }

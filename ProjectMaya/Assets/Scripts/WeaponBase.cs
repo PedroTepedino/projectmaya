@@ -8,29 +8,28 @@ public abstract class WeaponBase : MonoBehaviour
     [SerializeField] protected int weaponPriority;
     public int WeaponPriority => weaponPriority;
     [SerializeField] protected int magazineSize;
-    public int magazineRemaning {get; protected set;}
+    public int magazineRemaning { get; protected set; }
     [SerializeField] protected float reloadTime;
     [SerializeField] protected float shootingSpeed;
     [SerializeField] protected Projectile projectilePrefab;
     [SerializeField] protected ParticleSystem shootingParticle;
-    [SerializeField] protected Transform spawnPosition;
     [SerializeField] protected int startingPoolSize = 20;
     [SerializeField] protected int maxPoolSize = 100;
 
-    [HideInInspector] public ObjectPool<Projectile> pool {get; protected set;}
+    [HideInInspector] public ObjectPool<Projectile> pool { get; protected set; }
     [HideInInspector] public Vector2 aimDirection;
 
     protected float timerToShoot = 0;
     protected bool recharging = false;
 
-    protected void Awake() 
+    protected void Awake()
     {
-        pool = new ObjectPool<Projectile>(CreateProjectile, 
-                                          OnTakeProjectileFromPool, 
-                                          OnReturnProjectileToPool, 
-                                          OnDestroyProjectileFromPool, 
-                                          true, 
-                                          startingPoolSize, 
+        pool = new ObjectPool<Projectile>(CreateProjectile,
+                                          OnTakeProjectileFromPool,
+                                          OnReturnProjectileToPool,
+                                          OnDestroyProjectileFromPool,
+                                          true,
+                                          startingPoolSize,
                                           maxPoolSize);
 
         // for (int i = 0; i < startingPoolSize; i++)
@@ -42,7 +41,8 @@ public abstract class WeaponBase : MonoBehaviour
         magazineRemaning = magazineSize;
     }
 
-    protected virtual void Update() {
+    protected virtual void Update()
+    {
         timerToShoot -= Time.deltaTime;
     }
 
@@ -55,7 +55,7 @@ public abstract class WeaponBase : MonoBehaviour
 
     void OnTakeProjectileFromPool(Projectile projectile)
     {
-        projectile.transform.position = spawnPosition.transform.position;
+        projectile.transform.position = this.transform.position;
         projectile.gameObject.SetActive(true);
     }
 

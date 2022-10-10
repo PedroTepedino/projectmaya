@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossRocketLauncher : WeaponBase
 {
-    protected override void Update() 
+    protected override void Update()
     {
         base.Update();
 
@@ -20,9 +20,9 @@ public class BossRocketLauncher : WeaponBase
         {
             shootingParticle.Play();
             var projectile = pool.Get();
-            projectile.direction = Vector2.down;
+            projectile.direction = aimDirection;
             magazineRemaning--;
             timerToShoot = shootingSpeed;
         }
-    }    
+    }
 }

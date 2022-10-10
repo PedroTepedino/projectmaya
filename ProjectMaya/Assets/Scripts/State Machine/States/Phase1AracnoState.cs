@@ -12,6 +12,7 @@ public class Phase1AracnoState : IState
     private readonly WallChecker wallCheck;
     private readonly Attack attack;
     private readonly float movingSpeed;
+    private readonly int maxAvalibleWeapons = 3;
 
     public Phase1AracnoState(GameObject owner)
     {
@@ -26,6 +27,7 @@ public class Phase1AracnoState : IState
     public void OnEnter()
     {
         Debug.Log("Phase1");
+        attack.avalibleWeaponsNumber = maxAvalibleWeapons;
     }
 
     public void OnExit()
@@ -42,7 +44,7 @@ public class Phase1AracnoState : IState
             Move();
         else
             ownerController.movingRight = ownerController.movingRight ? false : true;
-        
+
         attack.SelectAttack();
     }
     private void Move()

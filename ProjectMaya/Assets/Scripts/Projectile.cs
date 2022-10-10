@@ -5,37 +5,46 @@ using UnityEngine.Pool;
 
 public abstract class Projectile : MonoBehaviour
 {
-    [SerializeField] private int damage;
-    [SerializeField] private float speed;
-    [SerializeField] private float lifetime = 5f;
-    [SerializeField] private string tagToHit;
-    [SerializeField] private LayerMask layersToHit;
-    [SerializeField] private ParticleSystem destroyParticle;
+    [SerializeField] protected int damage;
+    [SerializeField] protected float speed;
+    [SerializeField] protected float lifetime = 5f;
+    [SerializeField] protected string tagToHit;
+    [SerializeField] protected LayerMask layersToHit;
+    [SerializeField] protected ParticleSystem destroyParticle;
 
     [HideInInspector] public Vector2 direction;
 
-    private IObjectPool<Projectile> pool;
-    private SpriteRenderer projectileSprite;
+    protected IObjectPool<Projectile> pool;
+    protected SpriteRenderer projectileSprite;
+    protected Rigidbody2D projectileRigidbody;
 
     public void SetPool(IObjectPool<Projectile> toSetPool) => pool = toSetPool;
 
-    private void Awake() {
+    protected void Awake()
+    {
         projectileSprite = this.GetComponentInChildren<SpriteRenderer>();
+        projectileRigidbody = this.GetComponent<Rigidbody2D>();
     }
-    
-    protected void OnEnable() 
+
+    protected virtual void OnEnable()
     {
         Invoke("Destroy", lifetime);
     }
 
-    protected void FixedUpdate() 
+    protected virtual void OnDisable()
+    {
+        CancelInvoke();
+        destroyParticle.Stop();
+    }
+
+    protected void FixedUpdate()
     {
         Move();
     }
 
     public virtual void Move()
     {
-        transform.Translate(direction * speed * 0.01f, Space.World);
+        projectileRigidbody.velocity = direction.normalized * speed;
     }
 
     protected void Destroy()
@@ -57,14 +66,9 @@ public abstract class Projectile : MonoBehaviour
         pool.Release(this);
     }
 
-    protected private void OnDisable() {
-        CancelInvoke();
-        destroyParticle.Stop();
-    }
-
     public abstract IEnumerator Modifier();
-    
-    public virtual void OnCollisionEnter2D(Collision2D other) 
+
+    public virtual void OnCollisionEnter2D(Collision2D other)
     {
         var collidedGameObject = other.gameObject;
         if (collidedGameObject.CompareTag(tagToHit))
@@ -74,7 +78,7 @@ public abstract class Projectile : MonoBehaviour
         Destroy();
     }
 
-    public virtual void OnTriggerEnter2D(Collider2D other) 
+    public virtual void OnTriggerEnter2D(Collider2D other)
     {
         var collidedGameObject = other.gameObject;
         if (collidedGameObject.CompareTag(tagToHit))
