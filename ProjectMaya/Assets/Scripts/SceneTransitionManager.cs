@@ -13,19 +13,24 @@ public class SceneTransitionManager : MonoBehaviour
         StartCoroutine(LoadAsyncSceneCoroutine(sceneName));
     }
 
+    public void RestartScene()
+    {
+        StartCoroutine(LoadAsyncSceneCoroutine(SceneManager.GetActiveScene().name));
+    }
+
     IEnumerator LoadAsyncSceneCoroutine(string sceneName)
     {
         transitionAnimator.SetTrigger("ToOut");
 
         yield return new WaitForSeconds(1.0f);
-        Debug.Log("Load "+sceneName);
+        Debug.Log("Load " + sceneName);
 
         SceneManager.LoadScene(sceneName);
-        
+
         actualSceneName = SceneManager.GetActiveScene().name;
 
         // AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
-        
+
         // while (!operation.isDone)
         // {
         //     Debug.Log(operation.progress);

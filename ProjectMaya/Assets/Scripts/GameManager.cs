@@ -131,4 +131,10 @@ public class GameManager : MonoBehaviour
         playerInput.SwitchCurrentActionMap("UI");
     }
 
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+        sceneManager.RestartScene();
+    }
+
 }

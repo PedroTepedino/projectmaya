@@ -55,6 +55,8 @@ public class DemoManager : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        Time.timeScale = 1f;
+        winScreen.SetActive(false);
         sceneManager.SwitchToScene(menuSceneName);
     }
 

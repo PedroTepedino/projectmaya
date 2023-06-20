@@ -12,7 +12,8 @@ public class LifeSystem : MonoBehaviour
     public Action OnDie;
     public Action OnChangeLife;
 
-    private void Awake() {
+    private void Awake()
+    {
         _currentLife = _maxLife;
     }
 
@@ -27,7 +28,7 @@ public class LifeSystem : MonoBehaviour
         _currentLife -= damage;
 
         OnChangeLife?.Invoke();
-        
+
         if (IsDead)
             Die();
     }
@@ -35,6 +36,7 @@ public class LifeSystem : MonoBehaviour
     private void Die()
     {
         OnDie?.Invoke();
+        this.gameObject.SetActive(false);
     }
 
     public void Heal(int healAmount)
@@ -43,7 +45,7 @@ public class LifeSystem : MonoBehaviour
 
         if (_currentLife > _maxLife)
             _currentLife = _maxLife;
-        
+
         OnChangeLife?.Invoke();
     }
 }
