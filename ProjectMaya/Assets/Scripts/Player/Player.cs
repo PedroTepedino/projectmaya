@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
     {
         _playerInput.actions["Dash"].started -= ListenToDashButton;
         _playerInput.actions["Pause"].started -= ListenOnPause;
+        
     }
 
     private void Update()

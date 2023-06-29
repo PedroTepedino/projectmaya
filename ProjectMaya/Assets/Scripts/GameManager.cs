@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,7 +23,6 @@ public class GameManager : MonoBehaviour
             }
             return instance;
         }
-
     }
 
     [SerializeField] private GameObject pauseMenu;
@@ -32,6 +32,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private LifeSystem playerLifeSystem;
     [SerializeField] private SceneTransitionManager sceneManager;
     [SerializeField] private string menuSceneName;
+
+    /*[Header("First Button SetterS")]
+    [SerializeField] private GameObject pauseFirstButton;
+    [SerializeField] private GameObject optionsFirstButton;*/
 
     private bool isGamePaused = false;
 
@@ -97,6 +101,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         isGamePaused = true;
         playerInput.SwitchCurrentActionMap("UI");
+        print("Paused");//Edit Owner: León
     }
 
     public void ResumeGame()
@@ -105,18 +110,21 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         isGamePaused = false;
         playerInput.SwitchCurrentActionMap("Gameplay");
-    }
-
-    public void GoToOptions()
-    {
-        pauseMenu.SetActive(false);
-        optionsMenu.SetActive(true);
+        print("Unpaused");//Edit Owner: León
     }
 
     public void GoToPause()
     {
         optionsMenu.SetActive(false);
         pauseMenu.SetActive(true);
+        //EventSystem.current.SetSelectedGameObject(pauseFirstButton);Edit Owner: León
+    }
+
+    public void GoToOptions()
+    {
+        pauseMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+        //EventSystem.current.SetSelectedGameObject(optionsMenu);//Edit Owner: León
     }
 
     public void GoToMainMenu()
@@ -129,12 +137,14 @@ public class GameManager : MonoBehaviour
         deathScreen.SetActive(true);
         Time.timeScale = 0f;
         playerInput.SwitchCurrentActionMap("UI");
+        //EventSystem.current.SetSelectedGameObject(null);//Edit Owner: León
     }
 
     public void RestartGame()
     {
         Time.timeScale = 1f;
         sceneManager.RestartScene();
+        //EventSystem.current.SetSelectedGameObject(null);//Edit Owner: León
     }
 
 }
