@@ -2,19 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class NPC_Interaction : MonoBehaviour
 {
     
     public bool interact;
-    public TextMeshPro desiredText;
     private TextMeshPro tMesh;
+    public TextAsset npcInkJSON;
     [SerializeField] private GameObject dialogManager;
-    [Header("NPC UI Variables")]
+    [Header("NPC Dialog Variables")]
     [SerializeField] private GameObject npcUI;
     [SerializeField] private GameObject npcPortrait;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +27,7 @@ public class NPC_Interaction : MonoBehaviour
             tMesh.text = "Q/Gamepad B";
             interact = true;
             dialogManager.GetComponent<DialogManager>().targetNPC = this.gameObject;
+            dialogManager.GetComponent<DialogManager>().targetNPCInk = npcInkJSON;
         }
     }
     private void OnTriggerExit2D(Collider2D col)
@@ -37,6 +37,7 @@ public class NPC_Interaction : MonoBehaviour
             tMesh.text = "";
             interact = false;
             dialogManager.GetComponent<DialogManager>().targetNPC = null;
+            dialogManager.GetComponent<DialogManager>().targetNPCInk = null;
         }
     }
 }

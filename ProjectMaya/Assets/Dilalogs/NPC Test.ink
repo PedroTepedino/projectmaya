@@ -1,0 +1,3 @@
+Quick! 
+The MAD BOT is just up ahead!
+I swear I did heard the sound of a Maya as well...
