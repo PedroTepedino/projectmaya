@@ -24,14 +24,11 @@ public class DialogManager : MonoBehaviour
 
     private void ListenToDialogButton(InputAction.CallbackContext context)
     {
-        if (isGamePaused && targetNPC.GetComponent<NPC_Interaction>().interact == true)
+        if (targetNPC!=null && targetNPC.GetComponent<NPC_Interaction>().interact == true)
         {
-            ResumeInGame();
-        }else if (isGamePaused==false && targetNPC.GetComponent<NPC_Interaction>().interact == true)
-        {
-            PauseInGame();
-            
-        }
+            if (isGamePaused){ResumeInGame();}
+            else if (!isGamePaused){PauseInGame();}
+        }else { return; }
     }
     public void PauseInGame()
     {
