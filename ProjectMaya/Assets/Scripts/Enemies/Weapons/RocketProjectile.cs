@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,8 +21,7 @@ public class RocketProjectile : Projectile
     {
         launchingTimer += Time.deltaTime;
 
-        var rocketDirection = (direction - new Vector2(this.transform.position.x, this.transform.position.y)).normalized;
-        //this.transform.LookAt(new Vector3(rocketDirection.x, rocketDirection.y, rocketDirection.y)); 
+        var rocketDirection = (direction - new Vector2(this.transform.position.x, this.transform.position.y));
         var rotationAngle = Mathf.Atan2(rocketDirection.x, rocketDirection.y) * Mathf.Rad2Deg;
         this.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(rotationAngle, Vector3.forward), 1f);
 
